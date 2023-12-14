@@ -25,13 +25,26 @@ const seed = async () => {
     // Insert fake data into the 'item' table
     for (let i = 0; i < 5; i += 1) {
       queries.push(
-        database.query("insert into profile(bio,avatar,alt) values (?,?,?)", [
-          faker.lorem.words(10),
-          faker.internet.avatar(),
-          "profile avatar",
-        ])
+        database.query(
+          "insert into player(role_id,username, email, password) values (?,?,?,?)"
+        ),
+        [
+          ["1"],
+          faker.internet.userName(),
+          faker.internet.email(),
+          faker.internet.password(),
+        ]()
       );
     }
+
+    // requete
+    // "insert into player(role_id,username, email, password) values (?,?,?,?)",
+    // [
+    //   ["1"],
+    //   faker.internet.userName(),
+    //   faker.internet.email(),
+    //   faker.internet.password(),
+    // ]
 
     /* ************************************************************************* */
 

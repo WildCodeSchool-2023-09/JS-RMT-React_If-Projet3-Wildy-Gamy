@@ -1,4 +1,10 @@
 CREATE TABLE
+    role (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        label VARCHAR(150)
+    );
+
+CREATE TABLE
     player (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         role_id INT NOT NULL,
@@ -39,10 +45,4 @@ CREATE TABLE
         game_id_ref INT NOT NULL,
         FOREIGN KEY (player_id_ref) REFERENCES player(id),
         FOREIGN KEY (game_id_ref) REFERENCES game(id)
-    );
-
-CREATE TABLE
-    role (
-        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-        label VARCHAR(150)
     );

@@ -20,7 +20,12 @@ const router = createBrowserRouter([
       {
         path: "./admin",
         element: <AdminPage />,
-        children: [{}],
+        children: [
+          {
+            path: "./admin/game",
+            element: <AdminPage />,
+          },
+        ],
       },
     ],
   },

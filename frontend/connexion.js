@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const connexion = axios.create({
-  baseURL: "https://some-domain.com/api/",
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}/api`,
 });
 
 export default connexion;
