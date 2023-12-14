@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
+import AdminGame from "./pages/AdminGame";
 
 const router = createBrowserRouter([
   {
@@ -14,18 +15,18 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: "admin/",
+    element: <AdminPage />,
+    children: [
       {
-        path: "/admin",
-        element: <AdminPage />,
-        children: [
-          {
-            path: "/admin/game",
-            element: <AdminPage />,
-          },
-        ],
+        path: "game",
+        element: <AdminGame />,
       },
     ],
   },
