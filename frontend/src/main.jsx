@@ -18,11 +18,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "./admin",
+        path: "/admin",
         element: <AdminPage />,
         children: [
           {
-            path: "./admin/game",
+            path: "/admin/game",
             element: <AdminPage />,
           },
         ],
