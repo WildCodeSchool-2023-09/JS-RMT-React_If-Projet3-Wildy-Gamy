@@ -4,9 +4,11 @@
 
 // Import the manager modules responsible for handling data operations on the tables
 const ItemManager = require("./models/ItemManager");
+const PlayerManager = require("./models/PlayerManager");
 
 const managers = [
   ItemManager,
+  PlayerManager,
   // Add other managers here
 ];
 
