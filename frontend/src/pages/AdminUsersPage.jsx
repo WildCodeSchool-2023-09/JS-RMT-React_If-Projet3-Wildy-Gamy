@@ -1,11 +1,13 @@
 import React from "react";
-import DeleteButton from "../components/DeleteButton";
+import AdminUsersTable from "../components/AdminUsersTable";
+import InputSearchBar from "../components/InputSearchBar";
 
 function AdminUsersPage() {
   return (
     <>
+      <InputSearchBar />
       <div>AdminUsersPage</div>
-      <DeleteButton />
+      <AdminUsersTable />
     </>
   );
 }
