@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/memoryComponents/Card";
+import Bingo from "../../components/memoryComponents/Bingo";
+import "../../style/MemoryStyle/MemoryGamePage.css";
 
 import cole from "../../../public/imgMemory/cole.webp";
 import jay from "../../../public/imgMemory/jay.png";
@@ -87,30 +89,34 @@ function MemoryGamePage() {
   }, []);
 
   return (
-    <div className="App">
-      <div className="title">Wildy Match</div>
-      <div className="gameNav">
-        <button type="button" onClick={shuffleCards}>
-          New game
-        </button>
+    <div className="memoryBody">
+      <div className="memoryPage">
+        <div className="title">Wildy Match</div>
+        <div className="gameNav">
+          <button type="button" onClick={shuffleCards}>
+            New game
+          </button>
 
-        <p>Turns: {turns}</p>
-      </div>
-      {isGameResolved ? (
-        <p>Bingo</p>
-      ) : (
-        <div className="card-grid">
-          {cards.map((card) => (
-            <Card
-              key={card.id}
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-          ))}
+          <p>Turns: {turns}</p>
         </div>
-      )}
+        {isGameResolved ? (
+          <Bingo />
+        ) : (
+          <div className="card-grid">
+            {cards.map((card) => (
+              <Card
+                key={card.id}
+                card={card}
+                handleChoice={handleChoice}
+                flipped={
+                  card === choiceOne || card === choiceTwo || card.matched
+                }
+                disabled={disabled}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

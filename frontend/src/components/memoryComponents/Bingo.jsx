@@ -1,6 +1,4 @@
-/* eslint-disable react/function-component-definition */
-import "../../style/MemoryStyle/Bingo.css";
-
+// eslint-disable-next-line react/function-component-definition
 const Bingo = () => {
   return (
     <div className="bingo-container">
