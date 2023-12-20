@@ -1,13 +1,15 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import AdminUsersTable from "../components/AdminUsersTable";
 import InputSearchBar from "../components/InputSearchBar";
 
 function AdminUsersPage() {
+  const data = useLoaderData();
+  console.info(data);
   return (
     <>
       <InputSearchBar />
-      <div>AdminUsersPage</div>
-      <AdminUsersTable />
+      <AdminUsersTable playerData={data} />
     </>
   );
 }
