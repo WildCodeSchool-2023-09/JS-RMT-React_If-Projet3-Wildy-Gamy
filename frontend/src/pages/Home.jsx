@@ -1,5 +1,12 @@
+import MemoryGamePage from "./MemoryPages/MemoryGamePage";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <p>Home</p>
+      <MemoryGamePage />
+    </div>
+  );
 }
 
 export default Home;
