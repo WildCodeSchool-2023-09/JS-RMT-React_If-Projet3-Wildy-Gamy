@@ -8,6 +8,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
 import AdminGame from "./pages/AdminGame";
+import connexion from "../connexion";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
       {
         path: "game",
         element: <AdminGame />,
+        loader: () => {
+          return connexion
+            .get("/admin")
+            .then((res) => res.data)
+            .catch((err) => console.error(err));
+        },
       },
     ],
   },
