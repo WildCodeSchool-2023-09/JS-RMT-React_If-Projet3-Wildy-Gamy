@@ -4,6 +4,6 @@ const router = express.Router();
 
 const partyControllers = require("./controllers/partyControllers");
 
-router.get("/admin", partyControllers.browse);
+router.get("/party", partyControllers.browse);
 
 module.exports = router;
