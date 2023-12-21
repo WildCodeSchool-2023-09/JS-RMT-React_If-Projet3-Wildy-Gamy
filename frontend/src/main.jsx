@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <AdminGame />,
         loader: () => {
           return connexion
-            .get("/admin")
+            .get("/party")
             .then((res) => res.data)
             .catch((err) => console.error(err));
         },

@@ -1,38 +1,38 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import connexion from "../../connexion";
 import CamenbertChart from "../../components/charts/CamenbertChat";
 
 function AdminGame() {
-  const data = useLoaderData();
+  const [isWon, setIsWon] = useState([]);
+  const [played, setPlayed] = useState([]);
 
-  const filter = (datas) => {
-    let firstGame = 0;
-    let secondGame = 0;
-    let thirdGame = 0;
+  let transformedData = [];
+  if (Array.isArray(isWon) && isWon.length > 0) {
+    transformedData = Object.keys(isWon[0]).map((key) => ({
+      name: key,
+      value: parseInt(isWon[0][key], 10),
+    }));
+  }
 
-    for (let i = 0; i < datas.length; i += 1) {
-      if (datas[i].game_id === 1) {
-        firstGame += 1;
-      } else if (datas[i].game_id === 2) {
-        secondGame += 1;
-      } else if (datas[i].game_id === 3) {
-        thirdGame += 1;
-      }
-    }
+  useEffect(() => {
+    connexion
+      .get("/party?stat=is_won")
+      .then((res) => setIsWon(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
-    const finalArray = [
-      { game_id: 1, value: firstGame },
-      { game_id: 2, value: secondGame },
-      { game_id: 3, value: thirdGame },
-    ];
-    return finalArray;
-  };
-
-  const state = filter(data);
+  useEffect(() => {
+    connexion
+      .get("/party?stat=played")
+      .then((res) => setPlayed(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div>
       <h1>adminGame</h1>
-      <CamenbertChart data={state} />
+      <CamenbertChart data={transformedData} dataKey="value" name="name" />
+      <CamenbertChart data={played} dataKey="value" name="name" />
     </div>
   );
 }
