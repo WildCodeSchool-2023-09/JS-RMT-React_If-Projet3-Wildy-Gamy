@@ -1,5 +1,11 @@
+import TicTacToe from "./TicTacToe";
+
 function Home() {
-  return <div>home</div>;
+  return (
+    <div>
+      <TicTacToe />
+    </div>
+  );
 }
 
 export default Home;
