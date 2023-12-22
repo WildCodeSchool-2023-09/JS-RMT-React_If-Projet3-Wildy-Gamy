@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Board from "../../components/TicTacToeComponents/Board";
-import "../style/components/TicTacToe.scss";
+import "../style/components/ticTacToe.scss";
 
 function calculateWinner(squares) {
   const lines = [
@@ -108,7 +108,7 @@ function TicTacToe() {
   return (
     <div className="game">
       <div className="game-board">
-        <h1 className="game-tic">Tic Tac Toe</h1>
+        <h2 className="game-tic">Tic Tac Toe</h2>
 
         <div className="restart-computer-stat">
           <div className="restart-computer">
