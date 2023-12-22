@@ -29,6 +29,15 @@ class PartyManager extends AbstractManager {
     `);
     return rows;
   }
+
+  async timeperplayer() {
+    const [rows] = await this.database.query(`
+    select player_id, sec_to_time(sum(time_to_sec(diff))) as
+    timePerPlayer from(select player_id, timediff(end_time, start_time) as diff from ${this.table})
+    as subquery group by player_id order by time_to_sec(timePerPlayer) desc
+    `);
+    return rows;
+  }
 }
 
 module.exports = PartyManager;

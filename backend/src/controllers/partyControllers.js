@@ -7,7 +7,13 @@ const browse = async (req, res, next) => {
     if (req.query.stat === "played") {
       party = await tables.party.statByParty();
     } else if (req.query.stat === "is_won") {
-      party = await tables.party.statByGame();
+      const stat = await tables.party.statByGame();
+      party.push(
+        { name: "won", value: +stat[0].victory },
+        { name: "lost", value: +stat[0].defeat }
+      );
+    } else if (req.query.stat === "timeperplayer") {
+      party = await tables.party.timeperplayer();
     } else {
       party = await tables.party.readAll();
     }
