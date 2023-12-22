@@ -14,5 +14,13 @@ class PlayerManager extends AbstractManager {
     // Return the array of items
     return rows;
   }
+
+  async delete(id) {
+    const [result] = await this.database.query(
+      `delete from ${this.table} where id = ?`,
+      [id]
+    );
+    return result;
+  }
 }
 module.exports = PlayerManager;
