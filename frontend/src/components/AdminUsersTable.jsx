@@ -1,10 +1,19 @@
 import "../style/components/AdminUsersTable.scss";
 import PropTypes from "prop-types";
 import DeleteButton from "./DeleteButton";
+import connexion from "../../connexion";
 
-function AdminUsersTable({ playerData }) {
+function AdminUsersTable({ playerData, search }) {
+  const deleteData = (id) => {
+    try {
+      connexion.delete(`/player/${id}`);
+      console.info("delete reussi");
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <div className="table-container">
+    <div>
       <table className="table">
         <thead>
           <tr className="title-table">
@@ -16,17 +25,21 @@ function AdminUsersTable({ playerData }) {
           </tr>
         </thead>
         <tbody>
-          {playerData.map((el) => (
-            <tr key={el.id}>
-              <td>{el.id}</td>
-              <td>{el.username}</td>
-              <td>{el.email}</td>
-              <td>{el.password}</td>
-              <td aria-label="delete-button">
-                <DeleteButton />
-              </td>
-            </tr>
-          ))}
+          {playerData
+            .filter((el) => {
+              return el.username.includes(search);
+            })
+            .map((el) => (
+              <tr key={el.id}>
+                <td>{el.id}</td>
+                <td>{el.username}</td>
+                <td>{el.email}</td>
+                <td>{el.password}</td>
+                <td className="button-container" aria-label="delete-button">
+                  <DeleteButton onClick={() => deleteData(el.id)} />
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
@@ -40,6 +53,7 @@ AdminUsersTable.propTypes = {
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
   }).isRequired,
+  search: PropTypes.string.isRequired,
 };
 
 export default AdminUsersTable;

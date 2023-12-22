@@ -3,15 +3,18 @@
   margin-right: 7rem;
 }
 
-.table-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 2rem;
-}
-
 th,
 td {
-  padding-left: 4rem;
-  padding-bottom: 1.5rem;
+  padding-right: 4rem;
+  padding-top: 1.5rem;
   text-align: left;
+}
+
+th {
+  border-bottom: solid 1px #b1a9a9;
+  padding-bottom: 1rem;
+}
+
+.button-container {
+  padding-right: 0px;
 }

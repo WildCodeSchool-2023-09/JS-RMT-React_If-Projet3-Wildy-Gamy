@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <AdminUsersPage />,
         loader: () => {
           return connexion
-            .get()
+            .get("/player")
             .then((res) => res.data)
             .catch((err) => console.error(err));
         },
