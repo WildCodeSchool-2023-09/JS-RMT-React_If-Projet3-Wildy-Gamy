@@ -7,7 +7,6 @@ function AdminUsersTable({ playerData, search }) {
   const deleteData = (id) => {
     try {
       connexion.delete(`/player/${id}`);
-      console.info("delete reussi");
     } catch (error) {
       console.error(error);
     }

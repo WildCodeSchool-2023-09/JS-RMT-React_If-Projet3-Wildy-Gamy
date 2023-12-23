@@ -24,7 +24,7 @@ function InputSearchBar({ setSearch, search, data }) {
   );
 }
 InputSearchBar.propTypes = {
-  setSearch: PropTypes.func.isRequired,
+  setSearch: PropTypes.string.isRequired,
   search: PropTypes.string.isRequired,
   data: PropTypes.arrayOf().isRequired,
 };
