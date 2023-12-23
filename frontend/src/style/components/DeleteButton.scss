@@ -6,4 +6,9 @@
   height: 38px;
   font-size: 15px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #ff4f4f;
 }
