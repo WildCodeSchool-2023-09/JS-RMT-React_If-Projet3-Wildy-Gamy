@@ -1,5 +1,4 @@
-// eslint-disable-next-line react/function-component-definition
-const Bingo = () => {
+function Bingo() {
   return (
     <div className="bingo-container">
       <div className="row">
@@ -10,6 +9,6 @@ const Bingo = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Bingo;
