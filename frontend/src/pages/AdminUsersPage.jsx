@@ -10,9 +10,6 @@ function AdminUsersPage() {
 
   return (
     <div className="container-navbar-table">
-      <div className="navbar">
-        <p>dfezf</p>
-      </div>
       <div className="table-search">
         <InputSearchBar
           setSearch={setSearch}
