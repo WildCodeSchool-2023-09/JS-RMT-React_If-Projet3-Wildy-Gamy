@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Board from "../../components/TicTacToeComponents/Board";
+import Board from "../components/TicTacToeComponents/Board";
 
 function calculateWinner(squares) {
   const lines = [
