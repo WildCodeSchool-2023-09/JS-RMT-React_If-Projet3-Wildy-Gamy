@@ -6,6 +6,7 @@ import connexion from "../../connexion";
 
 function AdminUsersTable({ search }) {
   const [userData, setUserData] = useState([]);
+
   const getUsers = async () => {
     try {
       const res = await connexion.get(`/players?search=${search}`);
@@ -14,6 +15,7 @@ function AdminUsersTable({ search }) {
       console.error(error);
     }
   };
+
   useEffect(() => {
     getUsers();
   }, [search]);
@@ -24,6 +26,7 @@ function AdminUsersTable({ search }) {
       console.error(error);
     }
   };
+
   return (
     <table className="table">
       <thead>
