@@ -1,58 +1,57 @@
 import "../style/components/AdminUsersTable.scss";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import DeleteButton from "./DeleteButton";
 import connexion from "../../connexion";
 
-function AdminUsersTable({ playerData, search }) {
+function AdminUsersTable({ search }) {
+  const [userData, setUserData] = useState([]);
+  const getUsers = async () => {
+    try {
+      const res = await connexion.get(`/players?search=${search}`);
+      setUserData(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getUsers();
+  }, [search]);
   const deleteData = (id) => {
     try {
-      connexion.delete(`/player/${id}`);
+      connexion.delete(`/players/${id}`);
     } catch (error) {
       console.error(error);
     }
   };
   return (
-    <div>
-      <table className="table">
-        <thead>
-          <tr className="title-table">
-            <th>#</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>#Edit</th>
+    <table className="table">
+      <thead>
+        <tr className="title-table">
+          <th>#</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>#Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {userData.map((el) => (
+          <tr key={el.id}>
+            <td>{el.id}</td>
+            <td>{el.username}</td>
+            <td>{el.email}</td>
+            <td className="button-container" aria-label="delete-button">
+              <DeleteButton onClick={() => deleteData(el.id)} />
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {playerData
-            .filter((el) => {
-              return el.username.includes(search);
-            })
-            .map((el) => (
-              <tr key={el.id}>
-                <td>{el.id}</td>
-                <td>{el.username}</td>
-                <td>{el.email}</td>
-                <td>{el.password}</td>
-                <td className="button-container" aria-label="delete-button">
-                  <DeleteButton onClick={() => deleteData(el.id)} />
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
 AdminUsersTable.propTypes = {
-  playerData: PropTypes.arrayOf({
-    id: PropTypes.number.isRequired,
-    username: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }).isRequired,
   search: PropTypes.string.isRequired,
-};
+}.isRequired;
 
 export default AdminUsersTable;

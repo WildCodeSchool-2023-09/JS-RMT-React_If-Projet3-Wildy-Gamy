@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import AdminUsersTable from "../components/AdminUsersTable";
 import InputSearchBar from "../components/InputSearchBar";
@@ -6,17 +5,12 @@ import "../style/pages/AdminUsersPage.scss";
 
 function AdminUsersPage() {
   const [search, setSearch] = useState("");
-  const usersData = useLoaderData();
 
   return (
     <div className="container-navbar-table">
       <div className="table-search">
-        <InputSearchBar
-          setSearch={setSearch}
-          search={search}
-          data={usersData}
-        />
-        <AdminUsersTable search={search} playerData={usersData} />
+        <InputSearchBar setSearch={setSearch} />
+        <AdminUsersTable search={search} />
       </div>
     </div>
   );

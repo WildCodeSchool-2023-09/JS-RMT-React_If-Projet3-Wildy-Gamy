@@ -3,11 +3,15 @@ const tables = require("../tables");
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
-    // Fetch all items from the database
-    const players = await tables.player.readAll();
-
+    let user = [];
+    if (req.query.search) {
+      user = await tables.player.search(req.query.search);
+    } else {
+      // Fetch all items from the database
+      user = await tables.player.readAll();
+    }
     // Respond with the items in JSON format
-    res.json(players);
+    res.status(200).json(user);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);

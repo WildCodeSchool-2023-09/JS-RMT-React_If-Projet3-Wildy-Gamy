@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
 import AdminGame from "./pages/AdminGame";
 import AdminUsersPage from "./pages/AdminUsersPage";
-import connexion from "../connexion";
 
 const router = createBrowserRouter([
   {
@@ -33,12 +32,6 @@ const router = createBrowserRouter([
       {
         path: "user",
         element: <AdminUsersPage />,
-        loader: () => {
-          return connexion
-            .get("/player")
-            .then((res) => res.data)
-            .catch((err) => console.error(err));
-        },
       },
     ],
   },

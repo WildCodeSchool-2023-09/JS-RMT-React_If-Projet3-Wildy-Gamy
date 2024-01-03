@@ -1,16 +1,11 @@
 import "../style/components/InputSearchBar.scss";
 import PropTypes from "prop-types";
 
-function InputSearchBar({ setSearch, search, data }) {
+function InputSearchBar({ setSearch }) {
   const handleSearch = (e) => {
     const result = e.target.value;
     setSearch(result);
   };
-  if (search.length > 0) {
-    data.filter((users) => {
-      return users.username.match(search);
-    });
-  }
 
   return (
     <div className="search-container">
@@ -25,7 +20,6 @@ function InputSearchBar({ setSearch, search, data }) {
 }
 InputSearchBar.propTypes = {
   setSearch: PropTypes.string.isRequired,
-  search: PropTypes.string.isRequired,
-  data: PropTypes.arrayOf().isRequired,
-};
+}.isRequired;
+
 export default InputSearchBar;
