@@ -32,7 +32,7 @@ function TicTacToe() {
   const [gamesAgainstComputer, setGamesAgainstComputer] = useState(0);
   const [winsAgainstComputer, setWinsAgainstComputer] = useState(0);
 
-  function handleClick(i) {
+  const handleClick = (i) => {
     const currentHistory = history.slice(0, stepNumber + 1);
     const currentBoard = currentHistory[stepNumber];
     const squares = [...currentBoard];
@@ -49,9 +49,9 @@ function TicTacToe() {
     if (vsComputer && calculateWinner(squares) === "X") {
       setWinsAgainstComputer((prevWins) => prevWins + 1);
     }
-  }
+  };
 
-  function handleRestart() {
+  const handleRestart = () => {
     setHistory([Array(9).fill(null)]);
     setStepNumber(0);
     setXIsNext(true);
@@ -60,9 +60,9 @@ function TicTacToe() {
     if (vsComputer) {
       setGamesAgainstComputer((prevGames) => prevGames + 1);
     }
-  }
+  };
 
-  function handleComputerMove(squares) {
+  const handleComputerMove = (squares) => {
     const availableMoves = squares.reduce((acc, square, index) => {
       if (!square) {
         acc.push(index);
@@ -80,7 +80,7 @@ function TicTacToe() {
       setStepNumber((prevStep) => prevStep + 1);
       setXIsNext(!xIsNext);
     }
-  }
+  };
 
   useEffect(() => {
     if (vsComputer && !xIsNext) {
@@ -98,11 +98,6 @@ function TicTacToe() {
 
   const currentBoard = history[stepNumber];
   const winner = calculateWinner(currentBoard);
-  const status = winner ? (
-    <span className="winner">Winner: {winner} !</span>
-  ) : (
-    <span className="next-player">Next player: {xIsNext ? "X" : "O"}</span>
-  );
 
   return (
     <div className="game">
@@ -141,7 +136,15 @@ function TicTacToe() {
         <Board squares={currentBoard} onClick={(i) => handleClick(i)} />
       </div>
 
-      <div>{status}</div>
+      <div>
+        {winner ? (
+          <span className="winner">Winner: {winner} !</span>
+        ) : (
+          <span className="next-player">
+            Next player: {xIsNext ? "X" : "O"}
+          </span>
+        )}
+      </div>
     </div>
   );
 }

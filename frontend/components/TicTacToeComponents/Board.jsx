@@ -15,7 +15,6 @@ function Board({ squares, onClick }) {
 
 Board.propTypes = {
   squares: PropTypes.arrayOf(PropTypes.string).isRequired,
-
   onClick: PropTypes.func.isRequired,
 };
 
