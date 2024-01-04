@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import PropTypes from "prop-types";
 import connexion from "../../services/connexion";
 
@@ -35,6 +35,7 @@ function CamembertChart({ title, url, dataKey, name }) {
                 />
               ))}
           </Pie>
+          <Legend />
         </PieChart>
       </ResponsiveContainer>
     </div>

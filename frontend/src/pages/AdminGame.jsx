@@ -2,21 +2,29 @@ import CamenbertChart from "../components/charts/CamenbertChart";
 import BarContainer from "../components/charts/BarChart";
 
 function AdminGame() {
+  // const array = [
+  //   {
+  //     name: "won",
+  //   },
+  // ];
+
+  const arr = "value";
+
   return (
     <div className="adminContainer">
       <h1>AdminGame</h1>
       <div className="camenbertContainer">
         <CamenbertChart
           url="/party?stat=is_won"
-          dataKey="value"
+          dataKey={arr}
           name="name"
-          title="Party won"
+          title="Victoire / Défaite"
         />
         <CamenbertChart
           url="/party?stat=played"
           dataKey="value"
           name="name"
-          title="Party by game"
+          title="Jeux les plus joués"
         />
       </div>
       <div className="barContainer">
