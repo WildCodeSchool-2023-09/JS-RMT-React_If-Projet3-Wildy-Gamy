@@ -18,7 +18,8 @@ class PlayerManager extends AbstractManager {
 
   async searchByUserName(search) {
     const [rows] = await this.database.query(
-      `select id, username, email from ${this.table} where username LIKE "%${search}%"`
+      `select id, username, email from ${this.table} where username LIKE ?`,
+      [`%${search}%`]
     );
     return rows;
   }

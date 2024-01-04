@@ -1,6 +1,6 @@
-import "../style/components/AdminUsersTable.scss";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import "../style/components/AdminUsersTable.scss";
 import DeleteButton from "./DeleteButton";
 import connexion from "../../connexion";
 
