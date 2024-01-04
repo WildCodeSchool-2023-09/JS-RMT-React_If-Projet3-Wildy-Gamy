@@ -5,7 +5,7 @@ const browse = async (req, res, next) => {
   try {
     let user = [];
     if (req.query.search) {
-      user = await tables.player.search(req.query.search);
+      user = await tables.player.searchByUserName(req.query.search);
     } else {
       // Fetch all items from the database
       user = await tables.player.readAll();
