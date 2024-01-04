@@ -19,6 +19,7 @@ function AdminUsersTable({ search }) {
   useEffect(() => {
     getUsers();
   }, [search]);
+
   const deleteData = (id) => {
     try {
       connexion.delete(`/players/${id}`);
