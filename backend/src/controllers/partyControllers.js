@@ -1,5 +1,6 @@
 // Import access to database tables
 const tables = require("../tables");
+const { transformTimeToMinute } = require("../services/time");
 
 const browse = async (req, res, next) => {
   try {
@@ -13,7 +14,11 @@ const browse = async (req, res, next) => {
         { name: "lost", value: +stat[0].defeat }
       );
     } else if (req.query.stat === "timeperplayer") {
-      party = await tables.party.timeperplayer();
+      const stat = await tables.party.timeperplayer();
+      party = stat.map((el) => ({
+        name: el.player_id,
+        value: transformTimeToMinute(el.time),
+      }));
     } else {
       party = await tables.party.readAll();
     }

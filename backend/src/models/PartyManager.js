@@ -6,10 +6,7 @@ class PartyManager extends AbstractManager {
   }
 
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all partys from the "party" table
     const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of partys
     return rows;
   }
 
@@ -33,8 +30,8 @@ class PartyManager extends AbstractManager {
   async timeperplayer() {
     const [rows] = await this.database.query(`
     select player_id, sec_to_time(sum(time_to_sec(diff))) as
-    timePerPlayer from(select player_id, timediff(end_time, start_time) as diff from ${this.table})
-    as subquery group by player_id order by time_to_sec(timePerPlayer) desc
+    time from(select player_id, timediff(end_time, start_time) as diff from ${this.table})
+    as subquery group by player_id order by time_to_sec(time) desc
     `);
     return rows;
   }
