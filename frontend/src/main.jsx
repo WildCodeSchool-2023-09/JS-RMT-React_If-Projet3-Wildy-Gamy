@@ -8,6 +8,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
 import AdminGame from "./pages/AdminGame";
+import AdminUsersPage from "./pages/AdminUsersPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "game",
         element: <AdminGame />,
+      },
+      {
+        path: "user",
+        element: <AdminUsersPage />,
       },
     ],
   },
