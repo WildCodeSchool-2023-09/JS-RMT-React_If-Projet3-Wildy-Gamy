@@ -4,7 +4,7 @@ import BarContainer from "../components/charts/BarChart";
 function AdminGame() {
   return (
     <div className="adminContainer">
-      <h1>Statistiques de jeux</h1>
+      <h1>Statistiques des jeux</h1>
       <div className="camenbertContainer">
         <CamenbertChart
           url="/party?stat=is_won"
@@ -24,7 +24,7 @@ function AdminGame() {
           url="/party?stat=timeperplayer"
           dataKey="value"
           name="name"
-          title="Les utilisateurs ayant le plus grand temps de jeux"
+          title="Les utilisateurs ayant le plus grand temps de jeu"
         />
       </div>
     </div>
