@@ -38,5 +38,11 @@ router.post("/envoyer-email", async (req, res) => {
     res.status(500).send(error.toString());
   }
 });
+const PlayerControllers = require("./controllers/playerControllers");
+const PartyControllers = require("./controllers/partyControllers");
+
+router.get("/players", PlayerControllers.browse);
+router.delete("/players/:id", PlayerControllers.destroy);
+router.get("/party", PartyControllers.browse);
 
 module.exports = router;
