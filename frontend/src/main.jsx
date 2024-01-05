@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
 import AdminGame from "./pages/AdminGame";
 import AdminUsersPage from "./pages/AdminUsersPage";
+import TicTacToe from "./pages/TicTacToe";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "tictactoe",
+        element: <TicTacToe />,
       },
     ],
   },
