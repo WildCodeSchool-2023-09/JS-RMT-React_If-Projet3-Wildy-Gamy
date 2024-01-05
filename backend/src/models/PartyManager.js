@@ -27,7 +27,7 @@ class PartyManager extends AbstractManager {
     return rows;
   }
 
-  async timeperplayer() {
+  async timePerPlayer() {
     const [rows] = await this.database.query(`
     SELECT p.player_id, pl.username, SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(p.end_time, p.start_time)))) AS time
     FROM party p
