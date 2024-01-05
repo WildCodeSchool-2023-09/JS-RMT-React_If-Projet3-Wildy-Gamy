@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+
 import InputContact from "./InputContact";
 
 import "../../style/components/contact.scss";
@@ -24,10 +24,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/envoyer-email",
-        formValue
-      );
+      const response = fetch("http://localhost:3001/envoyer-email", formValue);
 
       if (response.status !== 200) {
         console.error("Échec de l'envoi de l'email");
