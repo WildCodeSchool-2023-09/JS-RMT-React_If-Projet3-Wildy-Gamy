@@ -1,4 +1,4 @@
-import { BarChart, Bar, ResponsiveContainer, Legend } from "recharts";
+import { BarChart, Bar, ResponsiveContainer } from "recharts";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import connexion from "../../services/connexion";
@@ -25,15 +25,14 @@ function BarContainer({ url, title, dataKey }) {
       <ResponsiveContainer width="75%" height="100%">
         <BarChart width={150} height={40} data={stat}>
           <Bar dataKey={dataKey} fill="#8884d8" />
-          <Legend />
         </BarChart>
       </ResponsiveContainer>
-      <div>
+      <div className="timePerUserContainer">
         {stat.map((el) => (
-          <div key={el.value}>
-            <ul>
-              <li>Name: {el.name}</li>
-              <li>Value: {el.value}</li>
+          <div className="timePerUserDiv" key={el.value}>
+            <ul className="ulTimePerPlayer">
+              <li>Nom d'utilisateur: {el.name}</li>
+              <li>Temps de jeu: {el.value} min</li>
             </ul>
           </div>
         ))}
