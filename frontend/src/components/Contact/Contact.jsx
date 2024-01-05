@@ -1,5 +1,7 @@
 import { useState } from "react";
+import axios from "axios";
 import InputContact from "./InputContact";
+
 import "../../style/components/contact.scss";
 
 function Contact() {
@@ -18,8 +20,21 @@ function Contact() {
       [name]: value,
     }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/envoyer-email",
+        formValue
+      );
+
+      if (response.status !== 200) {
+        console.error("Échec de l'envoi de l'email");
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi de l'email :", error);
+    }
   };
   return (
     <div className="form-contact-container">
