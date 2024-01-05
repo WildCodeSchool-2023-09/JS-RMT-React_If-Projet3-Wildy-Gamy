@@ -38,6 +38,7 @@ router.post("/envoyer-email", async (req, res) => {
     res.status(500).send(error.toString());
   }
 });
+
 const PlayerControllers = require("./controllers/playerControllers");
 const PartyControllers = require("./controllers/partyControllers");
 
