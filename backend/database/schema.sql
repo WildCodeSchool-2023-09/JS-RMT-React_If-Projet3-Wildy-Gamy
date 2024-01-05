@@ -20,8 +20,8 @@ CREATE TABLE
         bio VARCHAR(350),
         avatar VARCHAR(255),
         alt VARCHAR(100),
-        player_id_ref INT NOT NULL,
-        FOREIGN KEY (player_id_ref) REFERENCES player(id)
+        player_id INT NOT NULL,
+        FOREIGN KEY (player_id) REFERENCES player(id)
     );
 
 CREATE TABLE
@@ -41,8 +41,6 @@ CREATE TABLE
         start_time TIMESTAMP,
         end_time TIMESTAMP,
         is_won BOOLEAN,
-        player_id_ref INT NOT NULL,
-        game_id_ref INT NOT NULL,
-        FOREIGN KEY (player_id_ref) REFERENCES player(id),
-        FOREIGN KEY (game_id_ref) REFERENCES game(id)
+        FOREIGN KEY (player_id) REFERENCES player(id),
+        FOREIGN KEY (game_id) REFERENCES game(id)
     );
