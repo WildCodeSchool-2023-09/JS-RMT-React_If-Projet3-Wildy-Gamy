@@ -10,7 +10,7 @@ const send = async (req, res, next) => {
       html: `<main>
         <h1>Bonjour Administrateur</h1>
         <h3>Vous avez un nouveau message de ${req.body.name} ${req.body.surname}</h3>
-        <h4>Téléphone facultatif : $${req.body.number}</h4>
+        <h4>Téléphone facultatif : ${req.body.number}</h4>
         <br /><span>____________________________________________________________</span>
         <p>${req.body.message}</p>
         <br /><span>____________________________________________________________</span>
