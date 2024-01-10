@@ -5,6 +5,9 @@
   gap: 2rem;
   display: flex;
   flex-direction: column;
+  .titleRanking {
+    padding: 0 1rem;
+  }
   h2 {
     display: flex;
     justify-content: center;
@@ -13,6 +16,7 @@
     border-radius: 20px;
     height: 35px;
     background: var(--button-color);
+    margin-top: 1.5rem;
   }
   .leaderBoardLineContainer {
     display: flex;
@@ -33,8 +37,49 @@
 }
 .burger,
 .cross {
-  color: aliceblue;
-  font-size: 2rem;
-  margin-left: 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  margin: 0 5px;
   cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.menu {
+  margin-top: 4rem;
+}
+.menuBurgerRanking {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .menuBurgerRanking {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 470px) {
+  .leaderBoardLineContainer {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .LeaderBoard-container {
+    display: none;
+  }
+}
+
+.menuBurguerRankingContainer {
+  .leaderBoardLineContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .button {
+    display: flex;
+    align-items: baseline;
+  }
 }
