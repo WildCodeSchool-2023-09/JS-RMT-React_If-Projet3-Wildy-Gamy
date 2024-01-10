@@ -6,8 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import InputContact from "./InputContact";
 import connexion from "../../services/connexion";
 
-import "../../style/components/contact.scss";
-
 const mail = {
   name: "",
   surname: "",
@@ -28,7 +26,6 @@ function Contact() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       await connexion.post("/contact", formValue);
       toast.success("Email envoyé avec succès!");
@@ -83,7 +80,7 @@ function Contact() {
               />
             </div>
           </div>
-          <label>
+          <label className="container-textera">
             <span className="label-text-form-contact">message :</span>
             <textarea
               className="textarea-form-contact"
@@ -93,12 +90,12 @@ function Contact() {
               value={formValue.message}
               required
             />
-            <input
-              className="form-contact-submit"
-              type="submit"
-              value="Envoyer"
-            />
           </label>
+          <input
+            className="form-contact-submit"
+            type="submit"
+            value="Envoyer"
+          />
         </form>
         <ToastContainer />
       </div>
