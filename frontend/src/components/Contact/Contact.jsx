@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import InputContact from "./InputContact";
+import connexion from "../../services/connexion";
 
 import "../../style/components/contact.scss";
 
@@ -24,11 +25,9 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = fetch("http://localhost:3001/envoyer-email", formValue);
+      await connexion.post("/contact", formValue);
 
-      if (response.status !== 200) {
-        console.error("Échec de l'envoi de l'email");
-      }
+      console.info("Email envoyé avec succès!");
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'email :", error);
     }
