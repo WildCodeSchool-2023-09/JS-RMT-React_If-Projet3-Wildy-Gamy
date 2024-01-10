@@ -5,14 +5,16 @@ import connexion from "../../services/connexion";
 
 import "../../style/components/contact.scss";
 
+const mail = {
+  name: "",
+  surname: "",
+  email: "",
+  number: "",
+  message: "",
+};
+
 function Contact() {
-  const [formValue, setFormValue] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    number: "",
-    message: "",
-  });
+  const [formValue, setFormValue] = useState(mail);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +29,7 @@ function Contact() {
     try {
       await connexion.post("/contact", formValue);
 
-      console.info("Email envoyé avec succès!");
+      setFormValue(mail);
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'email :", error);
     }
