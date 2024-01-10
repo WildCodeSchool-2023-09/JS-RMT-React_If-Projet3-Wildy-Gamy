@@ -1,7 +1,7 @@
-import TicTacToe from "./TicTacToe";
+import Contact from "../components/Contact/Contact";
 
 function Home() {
-  return <TicTacToe />;
+  return <Contact />;
 }
 
 export default Home;
