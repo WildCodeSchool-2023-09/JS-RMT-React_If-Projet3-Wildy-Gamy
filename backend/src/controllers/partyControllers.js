@@ -14,7 +14,7 @@ const browse = async (req, res, next) => {
         { name: "lost", value: +stat[0].defeat }
       );
     } else if (req.query.stat === "timeperplayer") {
-      const stat = await tables.party.timeperplayer();
+      const stat = await tables.party.timePerPlayer();
       party = stat.map((el) => ({
         name: el.username,
         value: transformTimeToMinute(el.time),
