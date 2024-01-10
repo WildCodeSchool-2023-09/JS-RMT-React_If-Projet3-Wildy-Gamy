@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import InputContact from "./InputContact";
 import connexion from "../../services/connexion";
 
@@ -28,10 +31,11 @@ function Contact() {
 
     try {
       await connexion.post("/contact", formValue);
-
+      toast.success("Email envoyé avec succès!");
       setFormValue(mail);
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'email :", error);
+      toast.error("Erreur lors de l'envoi de l'email");
     }
   };
   return (
@@ -96,6 +100,7 @@ function Contact() {
             />
           </label>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
