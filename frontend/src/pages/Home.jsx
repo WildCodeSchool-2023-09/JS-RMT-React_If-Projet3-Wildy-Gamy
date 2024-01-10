@@ -1,7 +1,7 @@
-import TicTacToe from "./TicTacToe";
+import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
 
 function Home() {
-  return <TicTacToe />;
+  return <LeaderBoard />;
 }
 
 export default Home;
