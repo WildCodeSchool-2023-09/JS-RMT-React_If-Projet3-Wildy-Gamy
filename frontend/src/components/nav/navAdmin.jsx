@@ -7,13 +7,13 @@ function NavAdmin() {
     <nav className="nav-admin-container">
       <ol>
         <li className="li-admin-nav">
-          <Link to="./user">
+          <Link to="user">
             <img width={30} src={homeIcon} alt="home" />
             User
           </Link>
         </li>
         <li className="li-admin-nav">
-          <Link to="./game">
+          <Link to="game">
             <img width={30} src={statIcon} alt="stats" />
             Stats
           </Link>
