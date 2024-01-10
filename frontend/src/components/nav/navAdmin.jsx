@@ -6,22 +6,18 @@ function NavAdmin() {
   return (
     <nav className="nav-admin-container">
       <ol>
-        <Link to="./user">
-          <li className="li-admin-nav">
-            <span>
-              <img width={30} src={homeIcon} alt="home" />
-            </span>
+        <li className="li-admin-nav">
+          <Link to="./user">
+            <img width={30} src={homeIcon} alt="home" />
             User
-          </li>
-        </Link>
-        <Link to="./game">
-          <li className="li-admin-nav">
-            <span>
-              <img width={30} src={statIcon} alt="stats" />
-            </span>
+          </Link>
+        </li>
+        <li className="li-admin-nav">
+          <Link to="./game">
+            <img width={30} src={statIcon} alt="stats" />
             Stats
-          </li>
-        </Link>
+          </Link>
+        </li>
       </ol>
     </nav>
   );

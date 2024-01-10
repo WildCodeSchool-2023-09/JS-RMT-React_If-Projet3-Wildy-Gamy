@@ -5,13 +5,15 @@
   align-items: center;
   gap: 35px;
   text-align: center;
-  color: white;
   font-size: 1.4rem;
-  span {
-    padding-left: 15px;
+  a {
+    color: var(--secondary-text-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 35px;
   }
   &:hover {
     background: white;
-    color: var(--secondary-text-color);
   }
 }
