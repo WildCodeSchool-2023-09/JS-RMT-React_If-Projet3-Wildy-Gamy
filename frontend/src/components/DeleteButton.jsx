@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "../style/components/DeleteButton.scss";
 
 function DeleteButton({ onClick }) {
   return (
