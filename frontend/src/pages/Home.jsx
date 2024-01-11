@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Carousel from "../components/carousel/Carousel";
 import connexion from "../services/connexion";
+import Contact from "../components/Contact/Contact";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -18,7 +19,8 @@ function Home() {
 
   return (
     <div>
-      <Carousel data={data} />
+      <Carousel data={data} />*
+      <Contact />
     </div>
   );
 }

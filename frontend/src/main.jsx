@@ -40,6 +40,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/tictactoe",
+    element: <TicTacToe />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
