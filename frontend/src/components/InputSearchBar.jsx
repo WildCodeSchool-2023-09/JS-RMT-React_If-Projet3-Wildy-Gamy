@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "../style/components/InputSearchBar.scss";
 
 function InputSearchBar({ setSearch }) {
   return (
