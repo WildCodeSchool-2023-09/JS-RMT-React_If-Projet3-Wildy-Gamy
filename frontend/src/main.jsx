@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         path: "",
         element: <Home />,
       },
+      {
+        path: "tictactoe",
+        element: <TicTacToe />,
+      },
     ],
   },
   {
