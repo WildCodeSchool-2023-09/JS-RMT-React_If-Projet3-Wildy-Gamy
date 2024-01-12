@@ -33,7 +33,7 @@ function LeaderBoard() {
           <LeaderBoardLine
             key={el.id}
             img={profil}
-            alt={el.name}
+            alt={"alt"}
             userName={el.name}
             rang={index}
           />
