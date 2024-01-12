@@ -20,12 +20,10 @@ function LeaderBoard() {
     getBestPlayer();
   }, []);
 
-  const alt = "pseudo";
-
   return (
     <div className="leaderBoard">
       <div className="leaderBoardMobile">
-        <LeaderBoardMobile player={player} profil={profil} alt={alt} />
+        <LeaderBoardMobile player={player} profil={profil} />
       </div>
       <div className="LeaderBoard-container">
         <div className="titleRanking">
@@ -35,7 +33,7 @@ function LeaderBoard() {
           <LeaderBoardLine
             key={el.id}
             img={profil}
-            alt={alt}
+            alt={el.name}
             userName={el.name}
             rang={index}
           />

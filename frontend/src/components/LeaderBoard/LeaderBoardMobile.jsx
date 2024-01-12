@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import PropTypes from "prop-types";
 import LeaderBoardLine from "./LeaderBoardLine";
 
-function LeaderBoardMobile({ player, profil, alt }) {
+function LeaderBoardMobile({ player, profil }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function LeaderBoardMobile({ player, profil, alt }) {
                 <LeaderBoardLine
                   key={el.id}
                   img={profil}
-                  alt={alt}
+                  alt={el.name}
                   userName={el.name}
                   rang={index}
                 />
@@ -69,7 +69,6 @@ LeaderBoardMobile.propTypes = {
     })
   ).isRequired,
   profil: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
 };
 
 export default LeaderBoardMobile;
