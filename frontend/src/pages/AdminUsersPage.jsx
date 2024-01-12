@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AdminUsersTable from "../components/AdminUsersTable";
 import InputSearchBar from "../components/InputSearchBar";
-import "../style/pages/AdminUsersPage.scss";
 
 function AdminUsersPage() {
   const [search, setSearch] = useState("");
