@@ -31,5 +31,14 @@ class PlayerManager extends AbstractManager {
     );
     return result;
   }
+
+  async create(player) {
+    const [result] = await this.database.query(
+      `insert into ${this.table} (username, email, password) values (?, ?, ?)`,
+      [player.username, player.email, player.password]
+    );
+
+    return result.insertId;
+  }
 }
 module.exports = PlayerManager;

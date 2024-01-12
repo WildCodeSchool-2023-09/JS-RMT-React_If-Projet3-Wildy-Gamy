@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <div>
-      <Carousel data={data} />*
+      <Carousel data={data} />
       <Contact />
     </div>
   );

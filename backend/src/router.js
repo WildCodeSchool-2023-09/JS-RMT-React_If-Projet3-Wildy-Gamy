@@ -12,5 +12,6 @@ router.delete("/players/:id", PlayerControllers.destroy);
 router.get("/party", PartyControllers.browse);
 router.get("/games", GameControllers.browse);
 router.post("/contact", ContactControllers.send);
+router.post("/players", PlayerControllers.add);
 
 module.exports = router;

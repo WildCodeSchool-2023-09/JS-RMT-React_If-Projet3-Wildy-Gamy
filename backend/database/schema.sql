@@ -7,7 +7,7 @@ CREATE TABLE
 CREATE TABLE
     player (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-        role_id INT NOT NULL,
+        role_id INT NULL,
         username VARCHAR(50),
         email VARCHAR(255),
         password VARCHAR(128),
