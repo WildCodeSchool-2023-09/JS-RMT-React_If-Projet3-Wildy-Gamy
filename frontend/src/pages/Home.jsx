@@ -1,7 +1,9 @@
-import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
-
 function Home() {
-  return <LeaderBoard />;
+  return (
+    <div>
+      <h1>r</h1>
+    </div>
+  );
 }
 
 export default Home;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import connexion from "../../services/connexion";
-import profil from "../../assets/icons8-stats-32.png";
+import profil from "../../assets/icons8-user-70.png";
 import LeaderBoardLine from "./LeaderBoardLine";
 import LeaderBoardMobile from "./LeaderBoardMobile";
 

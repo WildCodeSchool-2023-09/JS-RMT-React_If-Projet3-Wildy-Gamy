@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 function LeaderBoardLine({ img, alt, userName, rang }) {
   const formatRang = (r) => {
     if (r === 0) {
-      return `${r + 1}ER`;
+      return `${r + 1}er`;
     }
     if (r === 1) {
-      return `${r + 1}EME`;
+      return `${r + 1}eme`;
     }
-    return `${r + 1}EME`;
+    return `${r + 1}eme`;
   };
 
   return (
