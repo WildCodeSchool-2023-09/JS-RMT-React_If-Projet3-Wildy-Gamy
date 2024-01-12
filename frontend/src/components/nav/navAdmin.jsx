@@ -6,7 +6,7 @@ function NavAdmin() {
   return (
     <nav className="nav-admin-container">
       <ol>
-        <Link to="./user">
+        <Link to="/admin/user">
           <li className="li-admin-nav">
             <span>
               <img width={30} src={homeIcon} alt="home" />
@@ -14,7 +14,7 @@ function NavAdmin() {
             User
           </li>
         </Link>
-        <Link to="./game">
+        <Link to="/admin/game">
           <li className="li-admin-nav">
             <span>
               <img width={30} src={statIcon} alt="stats" />
