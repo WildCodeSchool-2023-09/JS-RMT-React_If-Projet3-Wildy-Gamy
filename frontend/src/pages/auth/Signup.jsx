@@ -39,6 +39,8 @@ function Signup() {
           type="text"
           onChange={handleChange}
           value={formValue.username}
+          minLength={3}
+          maxLength={25}
         />
         <InputComponents
           label="Email"
@@ -53,6 +55,8 @@ function Signup() {
           type="text"
           onChange={handleChange}
           value={formValue.password}
+          minLength={6}
+          maxLength={25}
         />
         <input type="submit" />
       </form>
