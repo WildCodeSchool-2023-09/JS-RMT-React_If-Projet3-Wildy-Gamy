@@ -32,7 +32,7 @@ const seed = async () => {
       );
     }
 
-    for (let i = 0; i <= 15; i += 1) {
+    for (let i = 0; i <= 35; i += 1) {
       queries.push(
         database.query(
           "insert into player(role_id,username, email, password) values (?,?,?,?)",
@@ -86,7 +86,7 @@ const seed = async () => {
       );
     }
 
-    for (let i = 0; i <= 10; i += 1) {
+    for (let i = 0; i <= 50; i += 1) {
       const startDate = faker.date.past({ years: 1 });
       const d = new Date(startDate);
       queries.push(
@@ -102,7 +102,7 @@ const seed = async () => {
         )
       );
     }
-    for (let i = 0; i <= 10; i += 1) {
+    for (let i = 0; i <= 20; i += 1) {
       const userId = i + 1;
       const test = `${faker.lorem.words(1)} profilwe avatar`;
       queries.push(

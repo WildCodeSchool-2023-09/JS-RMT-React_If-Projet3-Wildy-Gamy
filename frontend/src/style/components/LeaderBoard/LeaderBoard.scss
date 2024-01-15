@@ -1,0 +1,94 @@
+.LeaderBoard-container {
+  background: var(--primary-color);
+  color: white;
+  width: 360px;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  .titleRanking {
+    padding: 0 4rem;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: var(--button-color);
+    margin-top: 1.5rem;
+  }
+  .leaderBoardLineContainer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    .leaderBoardLineContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .rangConatiner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.75rem;
+    }
+  }
+}
+.burger,
+.cross {
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  margin: 0 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.cross {
+  color: white;
+}
+.menu {
+  margin-top: 4rem;
+}
+.menuBurgerRanking {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .menuBurgerRanking {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 470px) {
+  .leaderBoardLineContainer {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .LeaderBoard-container {
+    display: none;
+  }
+}
+
+.menuBurguerRankingContainer {
+  .leaderBoardLineContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 42px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .button {
+    display: flex;
+    align-items: baseline;
+  }
+}
