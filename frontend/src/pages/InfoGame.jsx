@@ -6,13 +6,22 @@ function InfoGame() {
   const info = useLoaderData();
 
   return (
-    <div>
+    <div className="all-page-info-game">
       <LeaderBoard />
-      <img src={info.image} alt={info.alt} />
-      <h2>{info.name}</h2>
-      <h3>Détail du jeu:</h3>
-      <p>{info.description}</p>
-      <Link to="/tictactoe">JOUER</Link>
+      <div className="container-info-game">
+        <img className="info-image" src={info.image} alt={info.alt} />
+        <div className="name-info">
+          <h2 className="name-game">{info.name}</h2>
+          <h3 className="detail-game">Détail du jeu:</h3>
+          <p className="info-game">{info.description}</p>
+        </div>
+
+        <div className="link-go">
+          <Link className="go" to="/tictactoe">
+            JOUER
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

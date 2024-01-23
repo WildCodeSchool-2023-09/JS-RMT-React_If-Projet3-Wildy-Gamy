@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 
 function ListGames({ data }) {
   return (
-    <div>
+    <div className="all-game-list">
+      <h2 className="game-available">Jeux disponibles</h2>
       <div className="game-list">
         {data.map((e) => (
           <Link to={`/games/${e.id}`} key={e.id}>
-            <img src={e.image} alt={e.alt} />
+            <img className="size-image-list" src={e.image} alt={e.alt} />
           </Link>
         ))}
       </div>
