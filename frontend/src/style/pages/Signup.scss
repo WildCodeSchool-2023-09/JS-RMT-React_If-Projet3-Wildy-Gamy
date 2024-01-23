@@ -1,0 +1,35 @@
+.signupContainer {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.inputSubmit {
+  width: 102px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: var(--button-color);
+  border: none;
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    color: var(--text-color);
+    margin-top: 10rem;
+    margin-left: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.inputSubmitContainer {
+  display: flex;
+  justify-content: center;
+}

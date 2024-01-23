@@ -32,34 +32,39 @@ function Signup() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <InputComponents
-          label="Nom d'utilisateur"
-          name="username"
-          type="text"
-          onChange={handleChange}
-          value={formValue.username}
-          minLength={3}
-          maxLength={25}
-        />
-        <InputComponents
-          label="Email"
-          name="email"
-          type="email"
-          onChange={handleChange}
-          value={formValue.email}
-        />
-        <InputComponents
-          label="Mot de passe"
-          name="password"
-          type="text"
-          onChange={handleChange}
-          value={formValue.password}
-          minLength={6}
-          maxLength={25}
-        />
-        <input type="submit" />
-      </form>
+      <div className="container">
+        <h3>Creation de compte</h3>
+        <form className="signupContainer" onSubmit={handleSubmit}>
+          <InputComponents
+            label="Nom d'utilisateur"
+            name="username"
+            type="text"
+            onChange={handleChange}
+            value={formValue.username}
+            minLength={3}
+            maxLength={25}
+          />
+          <InputComponents
+            label="Email"
+            name="email"
+            type="email"
+            onChange={handleChange}
+            value={formValue.email}
+          />
+          <InputComponents
+            label="Mot de passe"
+            name="password"
+            type="text"
+            onChange={handleChange}
+            value={formValue.password}
+            minLength={6}
+            maxLength={25}
+          />
+        </form>
+      </div>
+      <div className="inputSubmitContainer">
+        <input className="inputSubmit" type="submit" value="Inscription" />
+      </div>
       <ToastContainer />
     </>
   );

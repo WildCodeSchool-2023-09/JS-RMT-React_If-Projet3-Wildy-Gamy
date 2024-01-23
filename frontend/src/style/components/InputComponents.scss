@@ -1,0 +1,23 @@
+.inputSignup {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  border: none;
+  width: 170px;
+  height: 33px;
+  padding-left: 0.7rem;
+  outline: none;
+}
+
+.labelSignup {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.inputComponentLabel {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
