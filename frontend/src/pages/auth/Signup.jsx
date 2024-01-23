@@ -75,7 +75,6 @@ function Signup() {
           </div>
         </form>
       </div>
-
       <ToastContainer />
     </div>
   );
