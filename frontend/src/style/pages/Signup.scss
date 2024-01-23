@@ -45,3 +45,39 @@
   background-color: var(--button-color);
   width: 50vw;
 }
+
+.imageLogin {
+  width: 500px;
+}
+
+@media screen and (max-width: 1200px) {
+  .imageLogin {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .imageLogin {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .imageLoginContainer {
+    display: none;
+    visibility: hidden;
+  }
+  .loginContainer {
+    align-items: center;
+    justify-content: center;
+  }
+  .Container {
+    width: 100vw;
+  }
+  .signupContainer {
+    width: 100%;
+  }
+  .container h3 {
+    font-size: 15px;
+  }
+}

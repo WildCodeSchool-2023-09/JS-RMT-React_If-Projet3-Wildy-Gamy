@@ -38,8 +38,6 @@ function Signup() {
           className="imageLogin"
           src={ImageLogin}
           alt="ceci est l illustration de la page de creation de compte"
-          width={600}
-          height={600}
         />
       </div>
       <div className="container">
