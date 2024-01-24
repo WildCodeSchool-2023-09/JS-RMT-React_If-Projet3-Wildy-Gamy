@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import InputComponents from "../../components/input/InputComponents";
 import connexion from "../../services/connexion";
 import "react-toastify/dist/ReactToastify.css";
+import ImageLogin from "../../assets/imageLogin2.png";
 
 function Signup() {
   const [formValue, setFormValue] = useState({
@@ -31,37 +32,51 @@ function Signup() {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <InputComponents
-          label="Nom d'utilisateur"
-          name="username"
-          type="text"
-          onChange={handleChange}
-          value={formValue.username}
-          minLength={3}
-          maxLength={25}
+    <div className="loginContainer">
+      <div className="imageLoginContainer">
+        <img
+          className="imageLogin"
+          src={ImageLogin}
+          alt="ceci est l illustration de la page de creation de compte"
         />
-        <InputComponents
-          label="Email"
-          name="email"
-          type="email"
-          onChange={handleChange}
-          value={formValue.email}
-        />
-        <InputComponents
-          label="Mot de passe"
-          name="password"
-          type="text"
-          onChange={handleChange}
-          value={formValue.password}
-          minLength={6}
-          maxLength={25}
-        />
-        <button type="submit">Inscription</button>
-      </form>
+      </div>
+      <div className="formContainer">
+        <h3>Creation du compte</h3>
+        <form className="signupContainer" onSubmit={handleSubmit}>
+          <InputComponents
+            label="Nom d'utilisateur"
+            name="username"
+            type="text"
+            onChange={handleChange}
+            value={formValue.username}
+            minLength={3}
+            maxLength={25}
+          />
+          <InputComponents
+            label="Email"
+            name="email"
+            type="email"
+            onChange={handleChange}
+            value={formValue.email}
+          />
+          <InputComponents
+            label="Mot de passe"
+            name="password"
+            type="password"
+            onChange={handleChange}
+            value={formValue.password}
+            minLength={6}
+            maxLength={25}
+          />
+          <div className="inputSubmitContainer">
+            <button className="inputSubmit" type="submit">
+              Inscription
+            </button>
+          </div>
+        </form>
+      </div>
       <ToastContainer />
-    </>
+    </div>
   );
 }
 
