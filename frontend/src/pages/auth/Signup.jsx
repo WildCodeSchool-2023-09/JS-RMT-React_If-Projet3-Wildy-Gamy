@@ -40,7 +40,7 @@ function Signup() {
           alt="ceci est l illustration de la page de creation de compte"
         />
       </div>
-      <div className="container">
+      <div className="formContainer">
         <h3>Creation de compte</h3>
         <form className="signupContainer" onSubmit={handleSubmit}>
           <InputComponents
@@ -62,7 +62,7 @@ function Signup() {
           <InputComponents
             label="Mot de passe"
             name="password"
-            type="text"
+            type="password"
             onChange={handleChange}
             value={formValue.password}
             minLength={6}
