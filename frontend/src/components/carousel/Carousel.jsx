@@ -1,20 +1,18 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import PropTypes from "prop-types";
 
-function Carousel({ data }) {
+function Carousel({ games }) {
   return (
     <div className="carouselContainer">
       <Splide
         aria-label="Testimonial"
         options={{
           type: "loop",
-          width: "100%",
+          Width: "100%",
           perPages: 1,
-          arrows: false,
-          pagination: false,
         }}
       >
-        {data.map((e) => (
+        {games.map((e) => (
           <SplideSlide className="splideSlide" key={e.id}>
             <ul className="thumbnails">
               <li className="thumbnail">

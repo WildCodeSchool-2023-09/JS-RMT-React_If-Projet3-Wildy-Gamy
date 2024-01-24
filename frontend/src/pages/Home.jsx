@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import Carousel from "../components/carousel/Carousel";
 import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
+import ListGames from "../components/ListGames";
 
 function Home() {
-  const [data, setData] = useState([]);
+  const [games, setData] = useState([]);
   const exportData = async () => {
     try {
       const res = await connexion.get("/games");
@@ -19,7 +20,8 @@ function Home() {
 
   return (
     <div>
-      <Carousel data={data} />
+      <Carousel games={games} />
+      <ListGames games={games} />
       <Contact />
     </div>
   );

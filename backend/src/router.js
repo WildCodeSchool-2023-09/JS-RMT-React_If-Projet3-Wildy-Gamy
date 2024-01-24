@@ -15,6 +15,8 @@ router.get("/players", PlayerControllers.browse);
 router.delete("/players/:id", PlayerControllers.destroy);
 router.get("/party", PartyControllers.browse);
 router.get("/games", GameControllers.browse);
+router.get("/games/:id", GameControllers.read);
+
 router.post("/contact", ContactControllers.send);
 router.post("/players", validateUsers, hashPassword, PlayerControllers.add);
 router.post("/login", PlayerControllers.log);
