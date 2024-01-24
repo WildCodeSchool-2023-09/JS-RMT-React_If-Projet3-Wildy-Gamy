@@ -41,7 +41,7 @@ function Signup() {
         />
       </div>
       <div className="formContainer">
-        <h3>Creation de compte</h3>
+        <h3>Creation du compte</h3>
         <form className="signupContainer" onSubmit={handleSubmit}>
           <InputComponents
             label="Nom d'utilisateur"
