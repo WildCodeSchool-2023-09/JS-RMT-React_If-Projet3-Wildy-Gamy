@@ -6,6 +6,7 @@ const PlayerControllers = require("./controllers/playerControllers");
 const PartyControllers = require("./controllers/partyControllers");
 const GameControllers = require("./controllers/gameControllers");
 const ContactControllers = require("./controllers/contactControllers");
+// const AuthControllers = require("./controllers/authControllers");
 
 const hashPassword = require("./midleware/hash/hashPassword");
 const validateUsers = require("./midleware/joi/validateUsers");
@@ -16,5 +17,6 @@ router.get("/party", PartyControllers.browse);
 router.get("/games", GameControllers.browse);
 router.post("/contact", ContactControllers.send);
 router.post("/players", validateUsers, hashPassword, PlayerControllers.add);
+router.post("/login", PlayerControllers.log);
 
 module.exports = router;
