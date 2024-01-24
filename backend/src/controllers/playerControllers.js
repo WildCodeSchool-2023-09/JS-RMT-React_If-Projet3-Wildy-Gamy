@@ -1,5 +1,5 @@
+const argon2 = require("argon2");
 const tables = require("../tables");
-
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
@@ -42,7 +42,6 @@ const destroy = async (req, res, next) => {
 const add = async (req, res, next) => {
   // Extract the item data from the request body
   const player = req.body;
-
   try {
     // Insert the item into the database
     const insertId = await tables.player.create(player);
@@ -55,8 +54,34 @@ const add = async (req, res, next) => {
   }
 };
 
+const log = async (req, res, next) => {
+  try {
+    const login = await tables.player.readEmail(req.body.email);
+
+    if (login) {
+      const passwordMatch = await argon2.verify(
+        login.password,
+        req.body.password
+      );
+
+      if (passwordMatch) {
+        res.status(200).json({
+          message: "Login successful",
+        });
+      } else {
+        res.sendStatus(403);
+      }
+    } else {
+      res.sendStatus(403);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
   destroy,
   add,
+  log,
 };

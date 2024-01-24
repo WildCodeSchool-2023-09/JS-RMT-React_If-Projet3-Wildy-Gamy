@@ -25,10 +25,6 @@ const router = createBrowserRouter([
         path: "tictactoe",
         element: <TicTacToe />,
       },
-      {
-        path: "signup",
-        element: <Signup />,
-      },
     ],
   },
   {
