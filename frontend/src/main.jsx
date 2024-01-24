@@ -12,6 +12,7 @@ import AdminGame from "./pages/AdminGame";
 import AdminUsersPage from "./pages/AdminUsersPage";
 import TicTacToe from "./pages/TicTacToe";
 import InfoGame from "./pages/InfoGame";
+import Signup from "./pages/auth/Signup";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "tictactoe",
+        element: <TicTacToe />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
       },
     ],
   },
