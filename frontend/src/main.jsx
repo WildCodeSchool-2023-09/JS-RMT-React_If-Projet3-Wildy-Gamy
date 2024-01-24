@@ -14,7 +14,6 @@ import TicTacToe from "./pages/TicTacToe";
 import InfoGame from "./pages/InfoGame";
 import Signup from "./pages/auth/Signup";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
