@@ -27,10 +27,6 @@ const router = createBrowserRouter([
         path: "tictactoe",
         element: <TicTacToe />,
       },
-      {
-        path: "signup",
-        element: <Signup />,
-      },
     ],
   },
   {
@@ -61,6 +57,7 @@ const router = createBrowserRouter([
         .catch((err) => console.error(err));
     },
   },
+  { path: "/signup", element: <Signup /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
