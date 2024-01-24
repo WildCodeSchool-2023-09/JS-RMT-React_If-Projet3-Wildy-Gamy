@@ -14,6 +14,21 @@ const browse = async (req, res, next) => {
   }
 };
 
+const read = async (req, res, next) => {
+  try {
+    const games = await tables.game.read(req.params.id);
+
+    if (games == null) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(games);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
+  read,
 };

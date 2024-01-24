@@ -10,9 +10,10 @@ function InputComponents({
   maxLength,
 }) {
   return (
-    <label>
-      <span className="label-text-form-contact">{label}</span>
+    <label className="inputComponentLabel">
+      <span className="labelSignup">{label}</span>
       <input
+        className="inputSignup"
         name={name}
         type={type}
         onChange={onChange}
