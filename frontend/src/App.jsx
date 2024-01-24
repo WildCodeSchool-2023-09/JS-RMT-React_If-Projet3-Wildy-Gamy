@@ -3,7 +3,7 @@ import LeaderBoard from "./components/LeaderBoard/LeaderBoard";
 
 function App() {
   return (
-    <div>
+ <div className="app-container">
       <LeaderBoard />
       <Outlet />
     </div>

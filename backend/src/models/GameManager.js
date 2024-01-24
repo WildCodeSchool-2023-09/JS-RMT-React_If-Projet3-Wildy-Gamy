@@ -7,8 +7,8 @@ class GameManager extends AbstractManager {
 
   async readAll() {
     const [rows] = await this.database.query(
-      `select id, image, alt, description, name from ${this.table}`
-    );
+ `select id, image, alt, description, name from ${this.table}`
+);
 
     return rows;
   }

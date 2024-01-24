@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Carousel({ data }) {
   return (
-    <div>
+    <div className="carouselContainer">
       <Splide
         aria-label="Testimonial"
         options={{
@@ -13,7 +13,7 @@ function Carousel({ data }) {
         }}
       >
         {data.map((e) => (
-          <SplideSlide key={e.id}>
+          <SplideSlide className="splideSlide" key={e.id}>
             <ul className="thumbnails">
               <li className="thumbnail">
                 <img src={e.image} alt={e.alt} />
