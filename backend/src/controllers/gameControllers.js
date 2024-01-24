@@ -21,7 +21,7 @@ const read = async (req, res, next) => {
     if (games == null) {
       res.sendStatus(404);
     } else {
-      res.json(games);
+      res.status(200).json(games);
     }
   } catch (err) {
     next(err);

@@ -5,7 +5,7 @@ import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
 
 function Home() {
-  const [data, setData] = useState([]);
+  const [games, setData] = useState([]);
   const exportData = async () => {
     try {
       const res = await connexion.get("/games");
@@ -20,8 +20,8 @@ function Home() {
 
   return (
     <div>
-      <Carousel data={data} />
-      <ListGames data={data} />
+      <Carousel data={games} />
+      <ListGames games={games} />
       <Contact />
     </div>
   );
