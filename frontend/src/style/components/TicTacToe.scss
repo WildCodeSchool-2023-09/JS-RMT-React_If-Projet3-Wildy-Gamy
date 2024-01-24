@@ -1,0 +1,97 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../../src/assets/fond7.jpg);
+  padding-bottom: 28rem;
+}
+.game-tic {
+  margin: 1rem;
+  color: yellow;
+  text-align: center;
+  font-size: 5.5rem;
+}
+.restart-computer-stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.restart-computer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+}
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.square {
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 17px 20px 17px 20px;
+  font-size: 5rem;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #cfcfca;
+}
+
+.board {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-right: 1px;
+  width: 19rem;
+}
+.stat {
+  border: solid;
+  border-color: aliceblue;
+}
+.game-stat {
+  display: flex;
+  align-items: center;
+}
+.next-player,
+.time,
+.games-computer,
+.wins-computer {
+  color: aliceblue;
+}
+
+.computer {
+  color: aliceblue;
+}
+.winner {
+  margin-top: 2rem;
+  font-size: 5rem;
+  color: yellow;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+
+  transform: perspective(200px) rotateX(50deg);
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+button {
+  border-radius: 8px;
+}
+button:hover {
+  border-color: yellow;
+}

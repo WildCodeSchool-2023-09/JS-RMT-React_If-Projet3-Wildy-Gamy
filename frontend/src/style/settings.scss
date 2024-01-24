@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --main-bg-color: #383a40;
+  --primary-color: #2b2d31;
+  --text-color: #ffffff;
+  --secondary-text-color: #afafaf;
+  --button-color: #5865f2;
+  --user-color: #e59834;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: var(--main-bg-color);
+}
+.app-container {
+  display: flex;
+}

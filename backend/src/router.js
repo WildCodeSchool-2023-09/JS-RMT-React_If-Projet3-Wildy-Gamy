@@ -2,22 +2,19 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
+const PlayerControllers = require("./controllers/playerControllers");
+const PartyControllers = require("./controllers/partyControllers");
+const GameControllers = require("./controllers/gameControllers");
+const ContactControllers = require("./controllers/contactControllers");
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+const hashPassword = require("./midleware/hash/hashPassword");
+const validateUsers = require("./midleware/joi/validateUsers");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
-
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
-
-// Route to add a new item
-router.post("/items", itemControllers.add);
-
-/* ************************************************************************* */
+router.get("/players", PlayerControllers.browse);
+router.delete("/players/:id", PlayerControllers.destroy);
+router.get("/party", PartyControllers.browse);
+router.get("/games", GameControllers.browse);
+router.post("/contact", ContactControllers.send);
+router.post("/players", validateUsers, hashPassword, PlayerControllers.add);
 
 module.exports = router;

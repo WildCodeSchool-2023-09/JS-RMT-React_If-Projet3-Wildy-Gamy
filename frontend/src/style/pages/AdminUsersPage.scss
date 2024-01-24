@@ -1,0 +1,19 @@
+.table-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app-admin {
+  display: grid;
+  grid-template-columns: 22% 78%;
+  height: 130vh;
+}
+.nav-admin-container {
+  background: var(--primary-color);
+  background-attachment: fixed;
+}
+.table-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
