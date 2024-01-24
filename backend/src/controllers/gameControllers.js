@@ -14,7 +14,6 @@ const browse = async (req, res, next) => {
   }
 };
 
-
 const read = async (req, res, next) => {
   try {
     const games = await tables.game.read(req.params.id);
