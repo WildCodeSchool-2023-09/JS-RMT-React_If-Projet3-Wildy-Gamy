@@ -58,7 +58,7 @@ function Signup() {
           minLength={6}
           maxLength={25}
         />
-        <input type="submit" />
+        <button type="submit">Inscription</button>
       </form>
       <ToastContainer />
     </>
