@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function ListGames({ games }) {
   return (
     <div className="all-game-list">
-      <h2 className="game-available">Jeux disponibles</h2>
+      <h2 className="game-available">Les jeux disponibles</h2>
       <div className="game-list">
         {games.map((e) => (
           <Link to={`/games/${e.id}`} key={e.id}>
