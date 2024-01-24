@@ -1,7 +1,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import PropTypes from "prop-types";
 
-function Carousel({ data }) {
+function Carousel({ games }) {
   return (
     <div className="carouselContainer">
       <Splide
@@ -12,7 +12,7 @@ function Carousel({ data }) {
           perPages: 1,
         }}
       >
-        {data.map((e) => (
+        {games.map((e) => (
           <SplideSlide className="splideSlide" key={e.id}>
             <ul className="thumbnails">
               <li className="thumbnail">

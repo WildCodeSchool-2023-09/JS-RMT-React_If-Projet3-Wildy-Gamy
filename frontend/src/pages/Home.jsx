@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div>
-      <Carousel data={games} />
+      <Carousel games={games} />
       <ListGames games={games} />
       <Contact />
     </div>
