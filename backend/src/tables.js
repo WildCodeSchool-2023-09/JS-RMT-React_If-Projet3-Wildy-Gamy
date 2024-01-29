@@ -8,7 +8,6 @@ const ItemManager = require("./models/ItemManager");
 const PartyManager = require("./models/PartyManager");
 const PlayerManager = require("./models/PlayerManager");
 const ProfilManager = require("./models/ProfilManager");
-// const AuthManager = require("./models/AuthManager");
 
 const managers = [
   ItemManager,
@@ -16,8 +15,6 @@ const managers = [
   PlayerManager,
   GameManager,
   ProfilManager,
-  // AuthManager,
-  // Add other managers here
 ];
 
 // Create an empty object to hold data managers for different tables
