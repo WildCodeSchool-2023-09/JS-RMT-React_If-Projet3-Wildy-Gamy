@@ -1,19 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
 import icon from "../assets/icons8-user-70.png";
+import connexion from "../services/connexion";
 
 function PageComment() {
-  const [comments, setComments] = useState([]);
-  const [commentInput, setCommentInput] = useState("");
+  const [allComments, setAllComments] = useState([]);
+  const [formValue, setFormValue] = useState({ avis: "" });
 
-  const handleCommentInputChange = (e) => {
-    setCommentInput(e.target.value);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await connexion.get("/comments");
+        setAllComments(response.data);
+      } catch (error) {
+        console.error("Erreur lors du chargement des commentaires:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValue((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const addComment = () => {
-    if (commentInput.trim() !== "") {
-      setComments([...comments, commentInput]);
-      setCommentInput("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await connexion.post("/comments", formValue);
+
+      const response = await connexion.get("/comments");
+      setAllComments(response.data);
+
+      setFormValue({ avis: "" });
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du commentaire:", error);
     }
   };
 
@@ -25,30 +50,30 @@ function PageComment() {
         <div className="full-container-comment">
           <div className="name-comment-add">
             <div className="container-page-comment">
-              <img className="icon-comment" src={icon} alt="player" />
-              <div className="name-comment">
-                <h3 className="username-comment">userName</h3>
-                <p className="comment-user">
-                  {comments.length > 0
-                    ? comments[comments.length - 1]
-                    : "Aucun commentaire"}
-                </p>
-              </div>
+              {allComments.map((comment) => (
+                <div key={comment.id} className="name-comment">
+                  <img className="icon-comment" src={icon} alt="player" />
+                  <div className="comment-text">
+                    <h3 className="username-comment">username</h3>
+                    <p className="comment-user">{comment.avis}</p>
+                  </div>
+                </div>
+              ))}
+              ;
             </div>
-            <input
-              className="input-comment"
-              type="text"
-              placeholder="Ajouter un commentaire..."
-              value={commentInput}
-              onChange={handleCommentInputChange}
-            />
-            <button
-              className="submit-comment"
-              type="button"
-              onClick={addComment}
-            >
-              Ajouter
-            </button>
+            <form onSubmit={handleSubmit}>
+              <input
+                className="input-comment"
+                name="avis"
+                type="text"
+                onChange={handleChange}
+                placeholder="Ajouter un commentaire..."
+                value={formValue.avis}
+              />
+              <button className="submit-comment" type="submit">
+                Ajouter
+              </button>
+            </form>
           </div>
         </div>
       </div>

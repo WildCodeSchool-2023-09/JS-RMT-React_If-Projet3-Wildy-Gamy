@@ -17,7 +17,8 @@
 }
 .name-comment {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 .username-comment {
   color: #e59834;
@@ -26,8 +27,8 @@
 }
 .container-page-comment {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .comment-user {
   color: #ffffff;
@@ -36,7 +37,7 @@
   background-color: #383a40;
   color: #ffffff;
   width: 80%;
-  margin: auto;
+  margin-left: 5rem;
   padding: 1rem;
   border-radius: 20px;
   height: 70px;

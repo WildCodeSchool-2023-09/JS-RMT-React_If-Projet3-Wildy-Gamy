@@ -51,6 +51,12 @@ const router = createBrowserRouter([
   {
     path: "/commentaires",
     element: <PageComment />,
+    loader: async () => {
+      return connexion
+        .get(`/comments`)
+        .then((response) => response.data)
+        .catch((err) => console.error(err));
+    },
   },
   {
     path: "/games/:id",
