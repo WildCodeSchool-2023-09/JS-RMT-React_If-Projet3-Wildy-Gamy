@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import InputComponents from "../../components/input/InputComponents";
 import connexion from "../../services/connexion";
 import { AuthContext } from "../../../context/AuthContext";
+import ImageLogin from "../../assets/imageLogin2.png";
 
 function Login() {
   const { setConnected } = useContext(AuthContext);
@@ -36,25 +37,39 @@ function Login() {
   };
   return (
     <div className="loginAuthContainer">
-      <form onSubmit={handleSubmit}>
-        <InputComponents
-          label="Email"
-          name="email"
-          type="email"
-          onChange={handleChange}
-          value={formValue.email}
+      <div className="imageLoginContainer">
+        <img
+          className="imageLogin"
+          src={ImageLogin}
+          alt="ceci est l illustration de la page de creation de compte"
         />
-        <InputComponents
-          label="Mot de passe"
-          name="password"
-          type="password"
-          onChange={handleChange}
-          value={formValue.password}
-          minLength={6}
-          maxLength={25}
-        />
-        <button type="submit">connexion</button>
-      </form>
+      </div>
+      <div className="authFormContainer">
+        <h3>Connexion au compte</h3>
+        <form className="formLoginContainer" onSubmit={handleSubmit}>
+          <InputComponents
+            label="Email"
+            name="email"
+            type="email"
+            onChange={handleChange}
+            value={formValue.email}
+          />
+          <InputComponents
+            label="Mot de passe"
+            name="password"
+            type="password"
+            onChange={handleChange}
+            value={formValue.password}
+            minLength={6}
+            maxLength={25}
+          />
+          <div className="inputConnexionContainer">
+            <button className="inputConnexion" type="submit">
+              connexion
+            </button>
+          </div>
+        </form>
+      </div>
       <ToastContainer />
     </div>
   );
