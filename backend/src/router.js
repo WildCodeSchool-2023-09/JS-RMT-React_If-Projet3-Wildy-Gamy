@@ -22,6 +22,6 @@ router.post("/contact", ContactControllers.send);
 router.post("/players", validateUsers, hashPassword, PlayerControllers.add);
 router.post("/login", PlayerControllers.log);
 router.get("/profil", ProfilControllers.browse);
-router.get("./login/:id", ProfilControllers.read);
+router.get("/login/:id", ProfilControllers.read);
 
 module.exports = router;

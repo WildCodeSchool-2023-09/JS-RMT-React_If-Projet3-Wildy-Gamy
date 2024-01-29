@@ -25,7 +25,7 @@ function Login() {
     try {
       const validate = await connexion.post("/login", formValue);
       setConnected(validate.data);
-      toast.success("Vous etes connecte");
+      toast.success("vous êtes connectés");
       setTimeout(() => {
         navigate("/");
       }, 2000);
