@@ -19,10 +19,16 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <Carousel games={games} />
-      <ListGames games={games} />
-      <Contact />
+    <div className="home-page-container">
+      <div className="carousel-Container">
+        <Carousel games={games} />
+      </div>
+      <div className="home-list-games">
+        <ListGames games={games} />
+      </div>
+      <div className="home-contact-container">
+        <Contact />
+      </div>
     </div>
   );
 }
