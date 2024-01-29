@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault();
     try {
       const validate = await connexion.post("/login", formValue);
-      setConnected(validate.data.connected);
+      setConnected(validate.data);
       toast.success("Vous etes connecte");
       setTimeout(() => {
         navigate("/");
@@ -34,7 +34,6 @@ function Login() {
       toast.error("Erreur lors de la connexion");
     }
   };
-
   return (
     <div className="loginAuthContainer">
       <form onSubmit={handleSubmit}>
