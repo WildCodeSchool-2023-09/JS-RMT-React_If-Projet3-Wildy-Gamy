@@ -13,6 +13,7 @@ import AdminUsersPage from "./pages/AdminUsersPage";
 import TicTacToe from "./pages/TicTacToe";
 import InfoGame from "./pages/InfoGame";
 import Signup from "./pages/auth/Signup";
+import PageComment from "./pages/PageComment";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/tictactoe",
     element: <TicTacToe />,
+  },
+  {
+    path: "/commentaires",
+    element: <PageComment />,
   },
   {
     path: "/games/:id",

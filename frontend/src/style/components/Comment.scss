@@ -1,0 +1,22 @@
+.all-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #2b2d31;
+  width: 60rem;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.icon-comment {
+  margin: 1rem;
+}
+.comment-link {
+  margin-left: 4rem;
+  color: #ffffff;
+}
+.comment-number {
+  margin-left: 10rem;
+  color: #ffffff;
+}
