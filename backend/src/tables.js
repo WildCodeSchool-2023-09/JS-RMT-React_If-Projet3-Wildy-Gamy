@@ -7,6 +7,7 @@ const GameManager = require("./models/GameManager");
 const ItemManager = require("./models/ItemManager");
 const PartyManager = require("./models/PartyManager");
 const PlayerManager = require("./models/PlayerManager");
+const ProfilManager = require("./models/ProfilManager");
 // const AuthManager = require("./models/AuthManager");
 
 const managers = [
@@ -14,6 +15,7 @@ const managers = [
   PartyManager,
   PlayerManager,
   GameManager,
+  ProfilManager,
   // AuthManager,
   // Add other managers here
 ];
