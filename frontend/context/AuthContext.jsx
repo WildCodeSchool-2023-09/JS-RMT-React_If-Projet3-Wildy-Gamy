@@ -5,19 +5,19 @@ export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [connected, setConnected] = useState({ role: null });
-  const [profil, setProfil] = useState({ profiles: null });
+  const [profil, setProfile] = useState({ profiles: "" });
 
-  const context = useMemo(
+  const contextValue = useMemo(
     () => ({
       connected,
       setConnected,
       profil,
-      setProfil,
+      setProfile,
     }),
-    [connected, setConnected, profil, setProfil]
+    [connected, setConnected, profil, setProfile]
   );
   return (
-    <AuthContext.Provider value={context}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
 }
 
