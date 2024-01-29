@@ -21,6 +21,7 @@ CREATE TABLE
         avatar VARCHAR(255),
         alt VARCHAR(100),
         player_id INT NOT NULL,
+        createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (player_id) REFERENCES player(id)
     );
 
