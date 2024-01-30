@@ -9,6 +9,7 @@ const PartyManager = require("./models/PartyManager");
 const PlayerManager = require("./models/PlayerManager");
 const CommentManager = require("./models/CommentManager");
 // const AuthManager = require("./models/AuthManager");
+const ProfilManager = require("./models/ProfilManager");
 
 const managers = [
   CommentManager,
@@ -16,8 +17,7 @@ const managers = [
   PartyManager,
   PlayerManager,
   GameManager,
-  // AuthManager,
-  // Add other managers here
+  ProfilManager,
 ];
 
 // Create an empty object to hold data managers for different tables

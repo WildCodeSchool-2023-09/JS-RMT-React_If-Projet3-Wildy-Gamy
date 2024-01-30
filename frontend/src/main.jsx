@@ -14,6 +14,8 @@ import TicTacToe from "./pages/TicTacToe";
 import InfoGame from "./pages/InfoGame";
 import Signup from "./pages/auth/Signup";
 import PageComment from "./pages/PageComment";
+import Login from "./pages/auth/Login";
+import AuthProvider from "../context/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -69,12 +71,15 @@ const router = createBrowserRouter([
     },
   },
   { path: "/signup", element: <Signup /> },
+  { path: "/login", element: <Login /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

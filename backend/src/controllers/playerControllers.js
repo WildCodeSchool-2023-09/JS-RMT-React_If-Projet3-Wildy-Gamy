@@ -1,5 +1,7 @@
 const argon2 = require("argon2");
 const tables = require("../tables");
+const { createToken } = require("../services/jwt");
+
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
@@ -57,7 +59,6 @@ const add = async (req, res, next) => {
 const log = async (req, res, next) => {
   try {
     const login = await tables.player.readEmail(req.body.email);
-
     if (login) {
       const passwordMatch = await argon2.verify(
         login.password,
@@ -65,9 +66,15 @@ const log = async (req, res, next) => {
       );
 
       if (passwordMatch) {
-        res.status(200).json({
-          message: "Login successful",
-        });
+        const profil = await tables.profile.readProfileId(login.id);
+        delete login.password;
+        res
+          .cookie("auth", createToken(login), { httpOnly: true })
+          .status(200)
+          .json({
+            login,
+            profil,
+          });
       } else {
         res.sendStatus(403);
       }
