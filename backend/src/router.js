@@ -6,8 +6,8 @@ const commentControllers = require("./controllers/commentControllers");
 const validateComment = require("./validators/validateComment");
 
 router.get("/comments", commentControllers.browse);
-router.get("/comments/:id", commentControllers.read);
 router.post("/comments", validateComment, commentControllers.add);
+// router.get("/comments/:id", commentControllers.read);
 // router.put("/comments/:id", validateComment, commentControllers.edit);
 // router.delete("/comments/:id", commentControllers.destroy);
 

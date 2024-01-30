@@ -7,17 +7,17 @@ function PageComment() {
   const [allComments, setAllComments] = useState([]);
   const [formValue, setFormValue] = useState({ avis: "" });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await connexion.get("/comments");
-        setAllComments(response.data);
-      } catch (error) {
-        console.error("Erreur lors du chargement des commentaires:", error);
-      }
-    };
+  const getComments = async () => {
+    try {
+      const response = await connexion.get("/comments");
+      setAllComments(response.data);
+    } catch (error) {
+      console.error("Erreur lors du chargement des commentaires:", error);
+    }
+  };
 
-    fetchData();
+  useEffect(() => {
+    getComments();
   }, []);
 
   const handleChange = (e) => {
@@ -32,9 +32,7 @@ function PageComment() {
     e.preventDefault();
     try {
       await connexion.post("/comments", formValue);
-
-      const response = await connexion.get("/comments");
-      setAllComments(response.data);
+      await getComments();
 
       setFormValue({ avis: "" });
     } catch (error) {
@@ -59,11 +57,14 @@ function PageComment() {
                   </div>
                 </div>
               ))}
-              ;
             </div>
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit={handleSubmit}
+              aria-label="Formulaire de commentaires"
+            >
               <input
                 className="input-comment"
+                label="comment"
                 name="avis"
                 type="text"
                 onChange={handleChange}
