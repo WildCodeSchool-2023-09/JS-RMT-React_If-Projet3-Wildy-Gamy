@@ -62,15 +62,18 @@ function PageComment() {
               onSubmit={handleSubmit}
               aria-label="Formulaire de commentaires"
             >
-              <input
-                className="input-comment"
-                label="comment"
-                name="avis"
-                type="text"
-                onChange={handleChange}
-                placeholder="Ajouter un commentaire..."
-                value={formValue.avis}
-              />
+              <label htmlFor="commentInput" className="hidden-label">
+                <input
+                  id="commentInput"
+                  className="input-comment"
+                  name="avis"
+                  type="text"
+                  onChange={handleChange}
+                  placeholder="Ajouter un commentaire..."
+                  value={formValue.avis}
+                  aria-labelledby="commentInput"
+                />
+              </label>
               <button className="submit-comment" type="submit">
                 Ajouter
               </button>
