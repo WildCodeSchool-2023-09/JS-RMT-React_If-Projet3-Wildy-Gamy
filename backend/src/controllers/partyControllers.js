@@ -27,6 +27,21 @@ const browse = async (req, res, next) => {
     next(err);
   }
 };
+
+const read = async (req, res, next) => {
+  try {
+    const party = await tables.party.victory(req.params.id);
+    if (party == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(party);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
+  read,
 };
