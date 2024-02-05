@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import connexion from "../../services/connexion";
 
 function ButtonConected() {
   const { connected } = useContext(AuthContext);
-  const reload = () => {
+  const reload = async () => {
+    try {
+      await connexion.post("/logout");
+    } catch (error) {
+      console.error("Erreur lors de la déconnexion :", error);
+    }
     window.location.reload();
   };
   return (

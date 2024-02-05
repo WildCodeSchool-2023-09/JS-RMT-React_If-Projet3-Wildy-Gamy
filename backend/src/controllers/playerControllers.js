@@ -86,9 +86,18 @@ const log = async (req, res, next) => {
   }
 };
 
+const logout = (req, res) => {
+  // Effacer le cookie d'authentification côté client
+  res.clearCookie("auth");
+
+  // Répondre avec succès
+  res.sendStatus(200);
+};
+
 module.exports = {
   browse,
   destroy,
   add,
   log,
+  logout,
 };
