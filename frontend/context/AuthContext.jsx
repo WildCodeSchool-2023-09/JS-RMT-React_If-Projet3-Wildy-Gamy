@@ -19,6 +19,7 @@ function AuthProvider({ children }) {
     }),
     [connected, setConnected, profil, setProfile, wonGames, setWonGames]
   );
+
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );

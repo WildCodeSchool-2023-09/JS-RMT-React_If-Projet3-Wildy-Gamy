@@ -13,6 +13,7 @@ const hashPassword = require("./midleware/hash/hashPassword");
 const validateUsers = require("./midleware/joi/validateUsers");
 
 router.get("/players", PlayerControllers.browse);
+router.post("/logout", PlayerControllers.logout);
 router.delete("/players/:id", PlayerControllers.destroy);
 router.get("/party", PartyControllers.browse);
 router.get("/party/:id", PartyControllers.read);
