@@ -3,6 +3,7 @@ import Carousel from "../components/carousel/Carousel";
 import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
+import Header from "../components/header/Header";
 
 function Home() {
   const [games, setData] = useState([]);
@@ -20,6 +21,7 @@ function Home() {
 
   return (
     <div className="home-page-container">
+      <Header />
       <div className="carousel-Container">
         <Carousel games={games} />
       </div>

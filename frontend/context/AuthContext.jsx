@@ -16,6 +16,7 @@ function AuthProvider({ children }) {
     }),
     [connected, setConnected, profil, setProfil]
   );
+
   return (
     <AuthContext.Provider value={context}>{children}</AuthContext.Provider>
   );
