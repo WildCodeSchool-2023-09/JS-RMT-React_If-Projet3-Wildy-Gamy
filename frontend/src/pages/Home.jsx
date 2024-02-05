@@ -23,15 +23,15 @@ function Home() {
     <div className="home-page-container">
       <div className="carousel-Container">
         <Carousel games={games} />
+        <div>
+          <ProfilContainer />
+        </div>
       </div>
       <div className="home-list-games">
         <ListGames games={games} />
       </div>
       <div className="home-contact-container">
         <Contact />
-      </div>
-      <div>
-        <ProfilContainer />
       </div>
     </div>
   );
