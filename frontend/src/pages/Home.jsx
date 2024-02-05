@@ -3,6 +3,7 @@ import Carousel from "../components/carousel/Carousel";
 import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
+import ProfilContainer from "../components/profilContainer/Profile";
 
 function Home() {
   const [games, setData] = useState([]);
@@ -28,6 +29,9 @@ function Home() {
       </div>
       <div className="home-contact-container">
         <Contact />
+      </div>
+      <div>
+        <ProfilContainer />
       </div>
     </div>
   );
