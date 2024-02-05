@@ -7,7 +7,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import ImageLogin from "../../assets/imageLogin2.png";
 
 function Login() {
-  const { setConnected } = useContext(AuthContext);
+  const { setConnected, setProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({
     email: "",
@@ -26,6 +26,7 @@ function Login() {
     try {
       const validate = await connexion.post("/login", formValue);
       setConnected(validate.data);
+      setProfile(validate.data.profil);
       toast.success("vous êtes connectés");
       setTimeout(() => {
         navigate("/");

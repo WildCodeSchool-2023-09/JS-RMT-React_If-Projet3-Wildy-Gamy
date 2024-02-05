@@ -37,6 +37,17 @@ class PartyManager extends AbstractManager {
     `);
     return rows;
   }
+
+  async victory(id) {
+    const [rows] = await this.database.query(
+      `SELECT COUNT(*) as won_count
+      FROM ${this.table}
+      WHERE player_id = ? AND is_won = 1;`,
+      [id]
+    );
+
+    return rows[0];
+  }
 }
 
 module.exports = PartyManager;

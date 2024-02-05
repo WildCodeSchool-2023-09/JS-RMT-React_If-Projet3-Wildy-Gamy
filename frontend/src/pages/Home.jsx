@@ -4,6 +4,7 @@ import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
 import Header from "../components/header/Header";
+import ProfilContainer from "../components/profilContainer/Profile";
 
 function Home() {
   const [games, setData] = useState([]);
@@ -24,6 +25,9 @@ function Home() {
       <Header />
       <div className="carousel-Container">
         <Carousel games={games} />
+        <div>
+          <ProfilContainer />
+        </div>
       </div>
       <div className="home-list-games">
         <ListGames games={games} />
