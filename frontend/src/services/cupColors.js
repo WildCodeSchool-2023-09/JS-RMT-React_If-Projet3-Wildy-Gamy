@@ -1,4 +1,4 @@
-const divisions = (num) => {
+const cupColors = (num) => {
   if (num === 0) {
     return "#FFFFFF";
   }
@@ -14,4 +14,4 @@ const divisions = (num) => {
   return "#A0B2C6";
 };
 
-export default divisions;
+export default cupColors;
