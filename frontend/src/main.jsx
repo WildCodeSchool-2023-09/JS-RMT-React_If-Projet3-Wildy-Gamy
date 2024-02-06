@@ -16,6 +16,7 @@ import Signup from "./pages/auth/Signup";
 import PageComment from "./pages/PageComment";
 import Login from "./pages/auth/Login";
 import AuthProvider from "../context/AuthContext";
+import ProfilPage from "./pages/ProfilPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "tictactoe",
         element: <TicTacToe />,
+      },
+      {
+        path: "profil",
+        element: <ProfilPage />,
       },
     ],
   },
