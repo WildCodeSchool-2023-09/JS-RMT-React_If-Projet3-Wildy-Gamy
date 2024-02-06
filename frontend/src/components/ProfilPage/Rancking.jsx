@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import trophy from "../../assets/trophy.svg";
 
-function Rancking({ rang, color }) {
+function Rancking({ rang, trophy }) {
   return (
     <div className="ranckingContainer">
       <div>
@@ -12,12 +11,7 @@ function Rancking({ rang, color }) {
       </div>
       <hr />
       <div>
-        <img
-          src={trophy}
-          width={105}
-          alt="trophée"
-          style={{ backgroundColor: color }}
-        />
+        <img src={trophy} width={105} alt="trophée" />
       </div>
     </div>
   );
@@ -25,7 +19,7 @@ function Rancking({ rang, color }) {
 
 Rancking.propTypes = {
   rang: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  trophy: PropTypes.string.isRequired,
 };
 
 export default Rancking;

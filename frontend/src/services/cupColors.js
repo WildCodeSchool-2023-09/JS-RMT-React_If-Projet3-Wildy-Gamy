@@ -1,17 +1,23 @@
+import img from "../assets/trophy/trophy(1).svg";
+import img1 from "../assets/trophy/trophy(2).svg";
+import img2 from "../assets/trophy/trophy(3).svg";
+import img3 from "../assets/trophy/trophy(4).svg";
+import img4 from "../assets/trophy/trophy(5).svg";
+
 const cupColors = (num) => {
   if (num === 0) {
-    return "#FFFFFF";
+    return img;
   }
   if (num <= 3) {
-    return "#614E1A";
+    return img1;
   }
   if (num <= 5) {
-    return "#C0C0C0";
+    return img2;
   }
   if (num <= 7) {
-    return "#FFD700";
+    return img3;
   }
-  return "#A0B2C6";
+  return img4;
 };
 
 export default cupColors;
