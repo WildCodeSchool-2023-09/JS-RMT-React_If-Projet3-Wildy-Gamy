@@ -1,0 +1,23 @@
+.connexionButton {
+  width: 102px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: var(--button-color);
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.disconnectedButton {
+  width: 102px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: #f05555;
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}

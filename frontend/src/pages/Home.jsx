@@ -4,6 +4,7 @@ import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
 import Comment from "../components/Comment";
+import Header from "../components/header/Header";
 import ProfilContainer from "../components/profilContainer/Profile";
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
 
   return (
     <div className="home-page-container">
+      <Header />
       <div className="carousel-Container">
         <Carousel games={games} />
         <div>

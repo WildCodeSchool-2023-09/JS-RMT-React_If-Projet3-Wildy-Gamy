@@ -45,31 +45,38 @@ function Login() {
           alt="ceci est l illustration de la page de creation de compte"
         />
       </div>
-      <div className="authFormContainer">
-        <h3>Connexion au compte</h3>
-        <form className="formLoginContainer" onSubmit={handleSubmit}>
-          <InputComponents
-            label="Email"
-            name="email"
-            type="email"
-            onChange={handleChange}
-            value={formValue.email}
-          />
-          <InputComponents
-            label="Mot de passe"
-            name="password"
-            type="password"
-            onChange={handleChange}
-            value={formValue.password}
-            minLength={6}
-            maxLength={25}
-          />
-          <div className="inputConnexionContainer">
-            <button className="inputConnexion" type="submit">
-              connexion
-            </button>
-          </div>
-        </form>
+      <div className="authFormButtonInscriptionContainer">
+        <div className="authInscriptionButtonContainer">
+          <button className="authInscriptionButton" type="button">
+            Inscription
+          </button>
+        </div>
+        <div className="authFormContainer">
+          <h3>Connexion au compte</h3>
+          <form className="formLoginContainer" onSubmit={handleSubmit}>
+            <InputComponents
+              label="Email"
+              name="email"
+              type="email"
+              onChange={handleChange}
+              value={formValue.email}
+            />
+            <InputComponents
+              label="Mot de passe"
+              name="password"
+              type="password"
+              onChange={handleChange}
+              value={formValue.password}
+              minLength={6}
+              maxLength={25}
+            />
+            <div className="inputConnexionContainer">
+              <button className="inputConnexion" type="submit">
+                connexion
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
       <ToastContainer />
     </div>
