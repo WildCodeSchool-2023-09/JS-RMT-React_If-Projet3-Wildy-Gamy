@@ -1,12 +1,33 @@
-.carousel-Container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .profil-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  color: var(--text-color);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.avatar-profil {
+  border-radius: 100px;
+}
+.division {
+  border-bottom: white solid 1px;
+}
+.member {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid white;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .info-profil-container {
+    display: none;
+  }
 }

@@ -25,9 +25,7 @@ function Home() {
       <Header />
       <div className="carousel-Container">
         <Carousel games={games} />
-        <div>
-          <ProfilContainer />
-        </div>
+        <ProfilContainer />
       </div>
       <div className="home-list-games">
         <ListGames games={games} />
