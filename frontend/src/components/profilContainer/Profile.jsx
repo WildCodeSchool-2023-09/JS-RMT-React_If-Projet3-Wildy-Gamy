@@ -8,19 +8,24 @@ function ProfilContainer() {
 
   if (connected && connected.login && connected.login.username) {
     return (
-      <div style={{ color: "white" }} className="profil-container">
-        <div style={{ display: "flex" }} className="user-info">
-          <div>
-            <img src={profil.avatar} alt={profil.alt} width={40} />
-          </div>
+      <div className="info-profil-container">
+        <div className="user-info">
+          <img
+            className="avatar-profil"
+            src={profil.avatar}
+            alt={profil.alt}
+            width={40}
+          />
           <p>{connected.login.username}</p>
         </div>
-        <div>
-          <h3>Division {division(connected.wonGames.won_count)}</h3>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span>MEMBRE DEPUIS</span>
-          <p>{convertTime(profil.createdat)}</p>
+        <div className="profil-container">
+          <h3 className="division">
+            Division {division(connected.wonGames.won_count)}
+          </h3>
+          <div className="member">
+            <span>MEMBRE DEPUIS</span>
+            <p>{convertTime(profil.createdat)}</p>
+          </div>
         </div>
       </div>
     );
