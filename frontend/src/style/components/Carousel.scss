@@ -25,11 +25,16 @@
 }
 
 @media screen and (max-width: 640px) {
-  .thumbnail {
-    width: 100%;
+  .carouselContainer {
+    width: 100vw;
     margin: auto;
-    margin-left: 2px;
-    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carouselContainer {
+    width: 100vw;
+    margin: auto;
   }
 }
 
