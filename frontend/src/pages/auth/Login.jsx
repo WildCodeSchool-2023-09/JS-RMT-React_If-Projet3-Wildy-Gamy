@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import InputComponents from "../../components/input/InputComponents";
@@ -47,9 +47,9 @@ function Login() {
       </div>
       <div className="authFormButtonInscriptionContainer">
         <div className="authInscriptionButtonContainer">
-          <button className="authInscriptionButton" type="button">
-            Inscription
-          </button>
+          <Link to="/signup" className="authInscriptionButton">
+            <p>Inscription</p>
+          </Link>
         </div>
         <div className="authFormContainer">
           <h3>Connexion au compte</h3>

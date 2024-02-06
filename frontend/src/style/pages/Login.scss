@@ -32,6 +32,8 @@
   justify-content: flex-end;
   padding-right: 2rem;
   width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .formLoginContainer {
@@ -62,13 +64,15 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 .authInscriptionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 102px;
   height: 33px;
   border-radius: 20px;
   background-color: var(--button-color);
   border: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   color: var(--text-color);
   cursor: pointer;
 }
