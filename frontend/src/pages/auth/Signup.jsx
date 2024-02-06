@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import InputComponents from "../../components/input/InputComponents";
 import connexion from "../../services/connexion";
@@ -69,9 +70,11 @@ function Signup() {
             maxLength={25}
           />
           <div className="inputSubmitContainer">
-            <button className="inputSubmit" type="submit">
-              Inscription
-            </button>
+            <Link to="/login">
+              <button className="inputSubmit" type="submit">
+                Inscription
+              </button>
+            </Link>
           </div>
         </form>
       </div>
