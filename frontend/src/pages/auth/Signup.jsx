@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import InputComponents from "../../components/input/InputComponents";
 import connexion from "../../services/connexion";
@@ -7,11 +7,16 @@ import "react-toastify/dist/ReactToastify.css";
 import ImageLogin from "../../assets/imageLogin2.png";
 
 function Signup() {
+  const navigate = useNavigate();
   const [formValue, setFormValue] = useState({
     username: "",
     email: "",
     password: "",
   });
+
+  const handleClick = () => {
+    navigate("/login");
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,6 +31,9 @@ function Signup() {
     try {
       await connexion.post("/players", formValue);
       toast.success("Vous etes inscrit");
+      setTimeout(() => {
+        handleClick();
+      }, 2000);
     } catch (error) {
       console.error("Erreur lors de l'inscription :", error);
       toast.error("Erreur lors de l'inscription");
@@ -70,11 +78,9 @@ function Signup() {
             maxLength={25}
           />
           <div className="inputSubmitContainer">
-            <Link to="/login">
-              <button className="inputSubmit" type="submit">
-                Inscription
-              </button>
-            </Link>
+            <button className="inputSubmit" type="submit">
+              Inscription
+            </button>
           </div>
         </form>
       </div>
