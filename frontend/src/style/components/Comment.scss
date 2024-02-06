@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   background-color: #2b2d31;
-  width: 60rem;
+  width: 80%;
   border-radius: 20px;
   margin: auto;
   margin-top: 5rem;
@@ -17,6 +17,23 @@
   color: #ffffff;
 }
 .comment-number {
-  margin-left: 10rem;
+  margin-left: 12rem;
   color: #ffffff;
+}
+.link-number {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1100px) {
+  .link-number {
+    display: flex;
+    flex-direction: column;
+  }
+  .comment-link {
+    margin: 0.5rem;
+    text-align: center;
+  }
+  .comment-number {
+    margin: 0.5rem;
+  }
 }
