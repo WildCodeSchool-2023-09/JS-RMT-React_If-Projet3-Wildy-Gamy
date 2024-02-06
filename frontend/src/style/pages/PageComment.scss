@@ -1,0 +1,71 @@
+.all-page-comment {
+  display: flex;
+  flex-direction: row;
+}
+.all-page-container-comment {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+.full-container-comment {
+  display: flex;
+  flex-direction: column;
+}
+.name-salon {
+  color: #ffffff;
+}
+.name-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.username-comment {
+  color: #e59834;
+  margin: 0;
+  padding: 0;
+}
+.container-page-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.comment-user {
+  color: #ffffff;
+}
+.input-comment {
+  background-color: #383a40;
+  color: #ffffff;
+  width: 80%;
+  margin-left: 5rem;
+  padding: 1rem;
+  border-radius: 20px;
+  height: 70px;
+  outline: none;
+  border: none;
+}
+.name-comment-add {
+  display: flex;
+  flex-direction: column;
+  background-color: #2b2d31;
+  width: 60vw;
+  border-radius: 20px;
+}
+.submit-comment {
+  background-color: #5865f2;
+  outline: none;
+  border: none;
+  color: aliceblue;
+  margin: 1rem 0 2rem 6rem;
+  width: 7rem;
+  height: 1.5rem;
+  border-radius: 10px;
+}
+@media (max-width: 900px) {
+  .all-page-container-comment {
+    align-items: center;
+  }
+  .name-comment-add {
+    width: 90vw;
+  }
+}

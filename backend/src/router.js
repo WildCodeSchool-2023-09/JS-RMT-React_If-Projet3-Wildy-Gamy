@@ -2,6 +2,15 @@ const express = require("express");
 
 const router = express.Router();
 
+const commentControllers = require("./controllers/commentControllers");
+const validateComment = require("./validators/validateComment");
+
+router.get("/comments", commentControllers.browse);
+router.post("/comments", validateComment, commentControllers.add);
+// router.get("/comments/:id", commentControllers.read);
+// router.put("/comments/:id", validateComment, commentControllers.edit);
+// router.delete("/comments/:id", commentControllers.destroy);
+
 const PlayerControllers = require("./controllers/playerControllers");
 const PartyControllers = require("./controllers/partyControllers");
 const GameControllers = require("./controllers/gameControllers");

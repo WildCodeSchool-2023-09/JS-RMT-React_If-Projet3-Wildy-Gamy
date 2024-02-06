@@ -3,6 +3,7 @@ import Carousel from "../components/carousel/Carousel";
 import connexion from "../services/connexion";
 import Contact from "../components/Contact/Contact";
 import ListGames from "../components/ListGames";
+import Comment from "../components/Comment";
 import Header from "../components/header/Header";
 import ProfilContainer from "../components/profilContainer/Profile";
 
@@ -32,6 +33,7 @@ function Home() {
       <div className="home-list-games">
         <ListGames games={games} />
       </div>
+      <Comment />
       <div className="home-contact-container">
         <Contact />
       </div>

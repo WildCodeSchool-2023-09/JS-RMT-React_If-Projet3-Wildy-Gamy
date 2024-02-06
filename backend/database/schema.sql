@@ -45,3 +45,9 @@ CREATE TABLE
         FOREIGN KEY (player_id) REFERENCES player(id),
         FOREIGN KEY (game_id) REFERENCES game(id)
     );
+
+create table comment (
+  id int unsigned primary key auto_increment not null,
+  avis VARCHAR(255) NOT NULL
+);
+
