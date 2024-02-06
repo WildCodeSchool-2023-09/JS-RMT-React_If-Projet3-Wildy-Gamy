@@ -7,11 +7,6 @@ import cupColors from "../services/cupColors";
 function ProfilPage() {
   const { profil, connected } = useContext(AuthContext);
 
-  // return (
-  //   <div>
-  //     <Rancking trophy={cupColors} />
-  //   </div>
-  // );
   if (connected && connected.login && connected.login.username && profil) {
     return (
       <div className="profilPageContainer">
