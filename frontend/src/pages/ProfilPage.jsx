@@ -8,6 +8,7 @@ import ProfilBio from "../components/ProfilPage/ProfilBio";
 import division from "../services/divisions";
 import cupColors from "../services/cupColors";
 import convertTime from "../services/convertTime";
+import Header from "../components/header/Header";
 
 function ProfilPage() {
   const { profil, connected } = useContext(AuthContext);
@@ -15,6 +16,7 @@ function ProfilPage() {
   if (connected && connected.login && connected.login.username && profil) {
     return (
       <div className="profilPageContainer">
+        <Header />
         <div className="ranckingInfoProfilContainer">
           <div className="ranckingContainerPage">
             <Rancking
