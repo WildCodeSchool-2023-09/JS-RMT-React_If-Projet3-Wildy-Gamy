@@ -68,6 +68,7 @@ const log = async (req, res, next) => {
       if (passwordMatch) {
         const profil = await tables.profile.readProfileId(login.id);
         const wonGames = await tables.party.victory(login.id);
+        const timePerPLayer = await tables.party.timePerPlayerByid(login.id);
         delete login.password;
         res
           .cookie("auth", createToken(login), { httpOnly: true })
@@ -76,6 +77,7 @@ const log = async (req, res, next) => {
             login,
             profil,
             wonGames,
+            timePerPLayer,
           });
       } else {
         res.sendStatus(403);

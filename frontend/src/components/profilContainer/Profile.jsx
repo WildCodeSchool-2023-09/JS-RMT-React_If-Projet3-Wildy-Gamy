@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import convertTime from "../../services/convertTime";
+import cupColors from "../../services/cupColors";
 import division from "../../services/divisions";
 
 function ProfilContainer() {
@@ -25,6 +26,10 @@ function ProfilContainer() {
           <div className="member">
             <span>MEMBRE DEPUIS</span>
             <p>{convertTime(profil.createdat)}</p>
+            <img
+              src={cupColors(connected.wonGames.won_count)}
+              alt="trophée expérience"
+            />
           </div>
         </div>
       </div>
