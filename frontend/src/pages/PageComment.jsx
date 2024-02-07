@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
 import icon from "../assets/icons8-user-70.png";
+import logo from "../assets/logo2.png";
 import connexion from "../services/connexion";
 
 function PageComment() {
@@ -43,41 +45,46 @@ function PageComment() {
   return (
     <div className="all-page-comment">
       <LeaderBoard />
-      <div className="all-page-container-comment">
-        <h3 className="name-salon">Salon Tic-Tac-Toe</h3>
-        <div className="full-container-comment">
-          <div className="name-comment-add">
-            <div className="container-page-comment">
-              {allComments.map((comment) => (
-                <div key={comment.id} className="name-comment">
-                  <img className="icon-comment" src={icon} alt="player" />
-                  <div className="comment-text">
-                    <h3 className="username-comment">username</h3>
-                    <p className="comment-user">{comment.avis}</p>
+      <div>
+        <Link to="/">
+          <img src={logo} alt="logo" className="logo-w" />
+        </Link>
+        <div className="all-page-container-comment">
+          <h3 className="name-salon">Salon Tic-Tac-Toe</h3>
+          <div className="full-container-comment">
+            <div className="name-comment-add">
+              <div className="container-page-comment">
+                {allComments.map((comment) => (
+                  <div key={comment.id} className="name-comment">
+                    <img className="icon-comment" src={icon} alt="player" />
+                    <div className="comment-text">
+                      <h3 className="username-comment">username</h3>
+                      <p className="comment-user">{comment.avis}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <form
+                onSubmit={handleSubmit}
+                aria-label="Formulaire de commentaires"
+              >
+                <label htmlFor="commentInput" className="hidden-label">
+                  <input
+                    id="commentInput"
+                    className="input-comment"
+                    name="avis"
+                    type="text"
+                    onChange={handleChange}
+                    placeholder="Ajouter un commentaire..."
+                    value={formValue.avis}
+                    aria-labelledby="commentInput"
+                  />
+                </label>
+                <button className="submit-comment" type="submit">
+                  Ajouter
+                </button>
+              </form>
             </div>
-            <form
-              onSubmit={handleSubmit}
-              aria-label="Formulaire de commentaires"
-            >
-              <label htmlFor="commentInput" className="hidden-label">
-                <input
-                  id="commentInput"
-                  className="input-comment"
-                  name="avis"
-                  type="text"
-                  onChange={handleChange}
-                  placeholder="Ajouter un commentaire..."
-                  value={formValue.avis}
-                  aria-labelledby="commentInput"
-                />
-              </label>
-              <button className="submit-comment" type="submit">
-                Ajouter
-              </button>
-            </form>
           </div>
         </div>
       </div>
