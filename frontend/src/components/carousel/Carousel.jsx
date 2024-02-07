@@ -13,7 +13,7 @@ function Carousel({ games }) {
           arrows: false,
           start: 1,
           autoplay: true,
-          interval: 1000,
+          interval: 10000,
         }}
       >
         {games.map((e) => (
