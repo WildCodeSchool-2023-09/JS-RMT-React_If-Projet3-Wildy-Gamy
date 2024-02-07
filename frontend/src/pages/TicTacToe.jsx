@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo2.png";
 import Board from "../components/TicTacToeComponents/Board";
 
 function calculateWinner(squares) {
@@ -100,50 +102,55 @@ function TicTacToe() {
   const winner = calculateWinner(currentBoard);
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <h2 className="game-tic">Tic Tac Toe</h2>
+    <div className="container-logo-w-tic">
+      <Link to="/">
+        <img src={logo} alt="logo" className="logo-w-tic" />
+      </Link>
+      <div className="game">
+        <div className="game-board">
+          <h2 className="game-tic">Tic Tac Toe</h2>
 
-        <div className="restart-computer-stat">
-          <div className="restart-computer">
-            <button type="button" onClick={handleRestart}>
-              New Game
-            </button>
-            <label className="computer">
-              VS computer
-              <input
-                type="checkbox"
-                checked={vsComputer}
-                onChange={() => setVsComputer(!vsComputer)}
-              />
-            </label>
+          <div className="restart-computer-stat">
+            <div className="restart-computer">
+              <button type="button" onClick={handleRestart}>
+                New Game
+              </button>
+              <label className="computer">
+                VS computer
+                <input
+                  type="checkbox"
+                  checked={vsComputer}
+                  onChange={() => setVsComputer(!vsComputer)}
+                />
+              </label>
+            </div>
+            <div className="stat">
+              <div className="time">Time: {elapsedTime} sec</div>
+              {vsComputer && (
+                <div className="games-computer">
+                  Games VS Computer: {gamesAgainstComputer}
+                </div>
+              )}
+              {vsComputer && (
+                <div className="wins-computer">
+                  Wins VS Computer: {winsAgainstComputer}
+                </div>
+              )}
+            </div>
           </div>
-          <div className="stat">
-            <div className="time">Time: {elapsedTime} sec</div>
-            {vsComputer && (
-              <div className="games-computer">
-                Games VS Computer: {gamesAgainstComputer}
-              </div>
-            )}
-            {vsComputer && (
-              <div className="wins-computer">
-                Wins VS Computer: {winsAgainstComputer}
-              </div>
-            )}
-          </div>
+
+          <Board squares={currentBoard} onClick={(i) => handleClick(i)} />
         </div>
 
-        <Board squares={currentBoard} onClick={(i) => handleClick(i)} />
-      </div>
-
-      <div>
-        {winner ? (
-          <span className="winner">Winner: {winner} !</span>
-        ) : (
-          <span className="next-player">
-            Next player: {xIsNext ? "X" : "O"}
-          </span>
-        )}
+        <div>
+          {winner ? (
+            <span className="winner">Winner: {winner} !</span>
+          ) : (
+            <span className="next-player">
+              Next player: {xIsNext ? "X" : "O"}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,10 @@ function Carousel({ games }) {
           type: "loop",
           Width: "100%",
           perPages: 1,
+          arrows: false,
+          start: 1,
+          autoplay: true,
+          interval: 1000,
         }}
       >
         {games.map((e) => (
