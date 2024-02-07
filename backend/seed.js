@@ -60,7 +60,7 @@ const seed = async () => {
           "tic-tac-toe",
           "tic-tac-toe",
           "Deux joueurs posent tour à tour un rond, pour l'un, une croix, pour l'autre, dans une grille de 3 cases par 3. Le but du jeu est d'obtenir un alignement (en ligne, colonne ou diagonale) de ses trois signes.",
-          faker.image.urlLoremFlickr(),
+          "https://github.com/Defreitasnicolas/assets_p3/blob/main/tictactoe%201.png?raw=true",
         ]
       )
     );
@@ -72,7 +72,7 @@ const seed = async () => {
           "memory",
           "memory",
           "Tout d'abord, il faut mélanger les cartes. Puis, les étaler face contre table afin qu'aucun des joueurs ne puissent les identifier. Une fois cela fait, le premier joueur retourne 2 cartes de son choix. Si les cartes sont identiques, le joueur les conserve à côté de lui et rejoue.",
-          faker.image.urlLoremFlickr(),
+          "https://github.com/Defreitasnicolas/assets_p3/blob/main/jeu2.png?raw=true",
         ]
       )
     );
@@ -85,7 +85,7 @@ const seed = async () => {
           "typeracer",
           "typeracer",
           "TypeRacer est un jeu qui vous aide à améliorer vos compétences en matière de dactylographie. Il vous met en concurrence avec d'autres dactylos dans une course. Mais au lieu de manœuvrer une voiture ou un avatar sur une piste ou dans un labyrinthe, vous devrez taper des mots pour amener votre voiture du point A au point B. Ainsi, non seulement vous vous entraînerez à taper rapidement et avec précision, mais vous aurez aussi le plaisir de le faire.",
-          faker.image.urlLoremFlickr(),
+          "https://github.com/Defreitasnicolas/assets_p3/blob/main/jeu3.png?raw=true",
         ]
       )
     );
