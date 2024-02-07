@@ -1,16 +1,23 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
+import AdminButton from "../input/AdminButton";
+import InputProfil from "../input/InputProfil";
 import logo from "../../assets/logo2.png";
 import ButtonConected from "../input/ButtonConected";
-import InputProfil from "../input/InputProfil";
-import AdminButton from "../input/AdminButton";
 
 function Header() {
   return (
     <div className="headerContainer">
-      <img src={logo} alt="logo" width={50} />
-      <ButtonConected />
-      <InputProfil />
-      <AdminButton />
+      <Link to="/">
+        <img style={{ marginLeft: "15px" }} src={logo} alt="logo" width={50} />
+      </Link>
+      <div className="mainHeaderContainer">
+        <ButtonConected />
+        <div className="mainHeaderContent">
+          <InputProfil />
+          <AdminButton />
+        </div>
+      </div>
     </div>
   );
 }
