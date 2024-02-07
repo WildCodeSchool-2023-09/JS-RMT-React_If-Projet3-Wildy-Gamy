@@ -38,15 +38,44 @@ class PartyManager extends AbstractManager {
     return rows;
   }
 
-  async victory(id) {
+  async timePerPlayerByid(id) {
     const [rows] = await this.database.query(
-      `SELECT COUNT(*) as won_count
-      FROM ${this.table}
-      WHERE player_id = ? AND is_won = 1;`,
+      `
+          SELECT p.player_id, pl.username, SEC_TO_TIME(SUM(TIME_TO_SEC(TIMEDIFF(p.end_time, p.start_time)))) AS time
+          FROM party p
+          JOIN player pl ON p.player_id = pl.id
+          WHERE p.player_id = ?
+          GROUP BY p.player_id, pl.username
+          ORDER BY TIME_TO_SEC(time) DESC;
+      `,
       [id]
     );
 
-    return rows[0];
+    if (Array.isArray(rows) && rows.length > 0) {
+      return rows[0];
+    }
+    return null;
+  }
+
+  async victory(id) {
+    const [wonRows] = await this.database.query(
+      `SELECT COUNT(*) as won_count
+          FROM ${this.table}
+          WHERE player_id = ? AND is_won = 1;`,
+      [id]
+    );
+
+    const [totalRows] = await this.database.query(
+      `SELECT COUNT(*) as total_count
+          FROM ${this.table}
+          WHERE player_id = ?;`,
+      [id]
+    );
+
+    return {
+      wonGames: wonRows[0].won_count,
+      totalGames: totalRows[0].total_count,
+    };
   }
 }
 
