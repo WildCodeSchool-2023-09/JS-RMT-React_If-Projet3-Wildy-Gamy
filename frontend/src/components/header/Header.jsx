@@ -9,7 +9,12 @@ function Header() {
   return (
     <div className="headerContainer">
       <Link to="/">
-        <img style={{ marginLeft: "15px" }} src={logo} alt="logo" width={50} />
+        <img
+          style={{ marginLeft: "25px", marginTop: "5px" }}
+          src={logo}
+          alt="logo"
+          width={50}
+        />
       </Link>
       <div className="mainHeaderContainer">
         <ButtonConected />
