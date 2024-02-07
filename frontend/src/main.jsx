@@ -13,6 +13,10 @@ import AdminUsersPage from "./pages/AdminUsersPage";
 import TicTacToe from "./pages/TicTacToe";
 import InfoGame from "./pages/InfoGame";
 import Signup from "./pages/auth/Signup";
+import PageComment from "./pages/PageComment";
+import Login from "./pages/auth/Login";
+import AuthProvider from "../context/AuthContext";
+import ProfilPage from "./pages/ProfilPage";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +28,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "tictactoe",
-        element: <TicTacToe />,
+        path: "profil",
+        element: <ProfilPage />,
       },
     ],
   },
@@ -48,6 +52,16 @@ const router = createBrowserRouter([
     element: <TicTacToe />,
   },
   {
+    path: "/commentaires",
+    element: <PageComment />,
+    loader: async () => {
+      return connexion
+        .get(`/comments`)
+        .then((response) => response.data)
+        .catch((err) => console.error(err));
+    },
+  },
+  {
     path: "/games/:id",
     element: <InfoGame />,
     loader: async ({ params }) => {
@@ -58,12 +72,15 @@ const router = createBrowserRouter([
     },
   },
   { path: "/signup", element: <Signup /> },
+  { path: "/login", element: <Login /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

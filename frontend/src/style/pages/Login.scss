@@ -1,0 +1,116 @@
+.loginAuthContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.imageLoginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-color);
+  width: 50vw;
+}
+.imageLogin {
+  width: 500px;
+}
+.authFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -6rem;
+  width: 50vw;
+  height: 100vh;
+  h3 {
+    color: var(--text-color);
+    margin-bottom: 0;
+  }
+}
+
+.authInscriptionButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formLoginContainer {
+  background-color: var(--primary-color);
+  flex-direction: column;
+  border-radius: 10px;
+  width: 350px;
+}
+.inputConnexionContainer {
+  display: flex;
+  justify-content: center;
+}
+.inputConnexion {
+  width: 102px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: var(--button-color);
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.inputConnexion:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.inputConnexion:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.authInscriptionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 102px;
+  height: 33px;
+  border-radius: 20px;
+  background-color: var(--button-color);
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.authInscriptionButton:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.authInscriptionButton:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 1200px) {
+  .imageLogin {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .imageLogin {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .imageLoginContainer {
+    display: none;
+    visibility: hidden;
+  }
+  .loginAuthContainer {
+    align-items: center;
+    justify-content: center;
+  }
+  .authFormContainer {
+    width: 100vw;
+  }
+  .authFormContainer h3 {
+    font-size: 15px;
+  }
+  .formLoginContainer {
+    width: 350px;
+  }
+  .authInscriptionButtonContainer {
+    width: 100vw;
+  }
+}

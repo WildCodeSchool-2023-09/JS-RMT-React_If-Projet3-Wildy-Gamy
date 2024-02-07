@@ -8,6 +8,7 @@
     display: none;
   }
 }
+
 .thumbnail {
   width: 100%;
   overflow: hidden;
@@ -18,18 +19,30 @@
   justify-content: center;
   align-items: center;
 }
+
+.carouselContainer {
+  width: 50vw;
+}
+
 @media screen and (max-width: 640px) {
-  .thumbnail {
-    width: 100%;
+  .carouselContainer {
+    width: 100vw;
     margin: auto;
-    margin-left: 2px;
-    justify-content: flex-start;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .carouselContainer {
+    width: 100vw;
+    margin: auto;
+  }
+}
+
 .thumbnail img {
   width: 75%;
   height: 75%;
 }
+
 .splide__pagination,
 .splide__pagination--ltr {
   display: none;

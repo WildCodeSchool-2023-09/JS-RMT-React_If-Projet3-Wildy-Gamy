@@ -1,5 +1,7 @@
 const argon2 = require("argon2");
 const tables = require("../tables");
+const { createToken } = require("../services/jwt");
+
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
@@ -57,7 +59,6 @@ const add = async (req, res, next) => {
 const log = async (req, res, next) => {
   try {
     const login = await tables.player.readEmail(req.body.email);
-
     if (login) {
       const passwordMatch = await argon2.verify(
         login.password,
@@ -65,9 +66,19 @@ const log = async (req, res, next) => {
       );
 
       if (passwordMatch) {
-        res.status(200).json({
-          message: "Login successful",
-        });
+        const profil = await tables.profile.readProfileId(login.id);
+        const wonGames = await tables.party.victory(login.id);
+        const timePerPLayer = await tables.party.timePerPlayerByid(login.id);
+        delete login.password;
+        res
+          .cookie("auth", createToken(login), { httpOnly: true })
+          .status(200)
+          .json({
+            login,
+            profil,
+            wonGames,
+            timePerPLayer,
+          });
       } else {
         res.sendStatus(403);
       }
@@ -79,9 +90,18 @@ const log = async (req, res, next) => {
   }
 };
 
+const logout = (req, res) => {
+  // Effacer le cookie d'authentification côté client
+  res.clearCookie("auth");
+
+  // Répondre avec succès
+  res.sendStatus(200);
+};
+
 module.exports = {
   browse,
   destroy,
   add,
   log,
+  logout,
 };

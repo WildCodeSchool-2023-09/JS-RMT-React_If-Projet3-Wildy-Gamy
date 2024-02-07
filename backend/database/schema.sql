@@ -21,6 +21,7 @@ CREATE TABLE
         avatar VARCHAR(255),
         alt VARCHAR(100),
         player_id INT NOT NULL,
+        createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (player_id) REFERENCES player(id)
     );
 
@@ -44,3 +45,9 @@ CREATE TABLE
         FOREIGN KEY (player_id) REFERENCES player(id),
         FOREIGN KEY (game_id) REFERENCES game(id)
     );
+
+create table comment (
+  id int unsigned primary key auto_increment not null,
+  avis VARCHAR(255) NOT NULL
+);
+
