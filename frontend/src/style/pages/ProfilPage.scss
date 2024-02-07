@@ -1,0 +1,22 @@
+.profilPageContainer {
+  width: 100%;
+}
+
+.ranckingInfoProfilContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  .ranckingInfoProfilContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}

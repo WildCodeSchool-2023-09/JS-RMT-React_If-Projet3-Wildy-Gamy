@@ -3,31 +3,74 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  border-radius: 20px;
   color: var(--text-color);
+  width: 100%;
 }
+
+.avatar-profil {
+  border-radius: 100px;
+}
+
 .user-info {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
-.avatar-profil {
-  border-radius: 100px;
-}
+
 .division {
-  border-bottom: white solid 1px;
+  background-color: var(--primary-color);
+  margin-bottom: 2px;
+  padding: 1rem;
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
+
+.division h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 .member {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid white;
   align-items: center;
   justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  margin-bottom: 2px;
+  padding: 1rem;
+}
+
+.cupColors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 1rem;
+}
+
+.info-profil-container {
+  width: 300px;
+}
+
+.userName {
+  color: var(--user-color);
 }
 @media screen and (max-width: 1200px) {
   .info-profil-container {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .info-profil-container {
+    width: 200px;
   }
 }

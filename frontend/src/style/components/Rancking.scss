@@ -1,0 +1,37 @@
+.ranckingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.divisionRang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.cup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  padding: 1rem;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 550px) {
+  .cup {
+    width: 70vw;
+  }
+  .divisionRang {
+    width: 70vw;
+  }
+}
