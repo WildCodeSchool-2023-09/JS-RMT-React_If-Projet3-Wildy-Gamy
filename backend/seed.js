@@ -92,15 +92,44 @@ const seed = async () => {
 
     await Promise.all(queriesGame);
 
+    const sendPlayer = [];
+
+    sendPlayer.push(
+      database.query(
+        "insert into player(role_id,username,email,password) values(?,?,?,?)",
+        [
+          2,
+          "WildyGamer",
+          "WildyGamer@gmail.com",
+          "$argon2id$v=19$m=65536,t=3,p=4$khzdtRAGFeEjX3JOP8ahtQ$sCKskfRURxiMENC8BwuI9UT7om2gvEy+hUwerpNys9k",
+        ]
+      )
+    );
+    await Promise.all(sendPlayer);
+
+    const sendProfil = [];
+    sendProfil.push(
+      database.query(
+        "insert into profile(bio,avatar,alt,player_id) values(?,?,?,?)",
+        [
+          "Titulus voluptatem thesis soleo cupressus voluptatum ad ulciscor absorbeo cursim. Bestia tabella ultio cresco una tepidus ambitus celebrer autem. Vae cedo adiuvo pectus capio suffoco socius suadeo ea.",
+          "https://avatars.githubusercontent.com/u/40671908",
+          "via profilwe avatar",
+          22,
+        ]
+      )
+    );
+    await Promise.all(sendProfil);
+
     const queryParty = [];
-    for (let i = 0; i <= 25; i += 1) {
+    for (let i = 0; i <= 22; i += 1) {
       const startDate = faker.date.past({ years: 1 });
       const d = new Date(startDate);
       queryParty.push(
         database.query(
           "insert into party(player_id,game_id,start_time,end_time,is_won) values (?,?,?,?,?)",
           [
-            Math.ceil(Math.random() * 16),
+            Math.ceil(Math.random() * 22),
             Math.ceil(Math.random() * 3),
             startDate,
             new Date(d.getTime() + Math.ceil(Math.random() * 45 * 60000)),
@@ -123,7 +152,6 @@ const seed = async () => {
       );
     }
 
-    // Wait for all the insertion queries to complete
     await Promise.all(queriesProfile);
 
     // requete
