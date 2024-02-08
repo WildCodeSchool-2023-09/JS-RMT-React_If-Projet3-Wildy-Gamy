@@ -7,7 +7,7 @@ import division from "../../services/divisions";
 function ProfilContainer() {
   const { profil, connected } = useContext(AuthContext);
 
-  if (connected && connected.login && connected.login.username) {
+  if (connected && connected.login && connected.login.username && profil) {
     return (
       <div className="info-profil-container">
         <div className="user-info">
@@ -37,6 +37,7 @@ function ProfilContainer() {
       </div>
     );
   }
+  return null;
 }
 
 export default ProfilContainer;
