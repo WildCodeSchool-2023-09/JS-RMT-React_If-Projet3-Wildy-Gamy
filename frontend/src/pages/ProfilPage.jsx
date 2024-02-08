@@ -8,6 +8,7 @@ import ProfilBio from "../components/ProfilPage/ProfilBio";
 import division from "../services/divisions";
 import cupColors from "../services/cupColors";
 import convertTime from "../services/convertTime";
+import Header from "../components/header/Header";
 
 function ProfilPage() {
   const { profil, connected } = useContext(AuthContext);
@@ -15,19 +16,22 @@ function ProfilPage() {
   if (connected && connected.login && connected.login.username && profil) {
     return (
       <div className="profilPageContainer">
-        <div className="ranckingContainerPage">
-          <Rancking
-            rang={division(connected.wonGames.won_count)}
-            trophy={cupColors(connected.wonGames.won_count)}
-          />
-        </div>
-        <div className="infoProfilContainer">
-          <InfoProfil
-            time={convertTime(profil.createdat)}
-            timePlayed={connected.timePerPLayer.time}
-            numberPlayed={connected.wonGames.totalGames}
-            numberWon={connected.wonGames.wonGames}
-          />
+        <Header />
+        <div className="ranckingInfoProfilContainer">
+          <div className="ranckingContainerPage">
+            <Rancking
+              rang={division(connected.wonGames.wonGames)}
+              trophy={cupColors(connected.wonGames.wonGames)}
+            />
+          </div>
+          <div className="infoProfilContainer">
+            <InfoProfil
+              time={convertTime(profil.createdat)}
+              timePlayed={connected.timePerPLayer.time}
+              numberPlayed={connected.wonGames.totalGames}
+              numberWon={connected.wonGames.wonGames}
+            />
+          </div>
         </div>
         <div>
           <ProfilBio

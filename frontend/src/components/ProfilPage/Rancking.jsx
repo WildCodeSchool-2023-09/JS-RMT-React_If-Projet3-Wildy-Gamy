@@ -4,14 +4,13 @@ import PropTypes from "prop-types";
 function Rancking({ rang, trophy }) {
   return (
     <div className="ranckingContainer">
-      <div>
+      <div className="divisionRang">
         <h2>
           Division <span>{rang}</span>
         </h2>
       </div>
-      <hr />
-      <div>
-        <img src={trophy} width={105} alt="trophée" />
+      <div className="cup">
+        <img src={trophy} width={55} alt="trophée" />
       </div>
     </div>
   );

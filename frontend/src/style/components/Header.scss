@@ -1,8 +1,28 @@
 .headerContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-left: 3rem;
+  margin-top: 5px;
+}
+
+.mainHeaderContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  margin-right: 3rem;
+}
+
+.mainHeaderContent {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  .buttonAdmin {
+    display: none;
+  }
 }

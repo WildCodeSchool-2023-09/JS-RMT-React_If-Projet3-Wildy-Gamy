@@ -17,17 +17,19 @@ function ProfilContainer() {
             alt={profil.alt}
             width={40}
           />
-          <p>{connected.login.username}</p>
+          <p className="userName">{connected.login.username}</p>
         </div>
         <div className="profil-container">
-          <h3 className="division">
-            Division {division(connected.wonGames.won_count)}
-          </h3>
+          <div className="division">
+            <h3>Division {division(connected.wonGames.wonGames)}</h3>
+          </div>
           <div className="member">
-            <span>MEMBRE DEPUIS</span>
+            <p>MEMBRE DEPUIS</p>
             <p>{convertTime(profil.createdat)}</p>
+          </div>
+          <div className="cupColors">
             <img
-              src={cupColors(connected.wonGames.won_count)}
+              src={cupColors(connected.wonGames.wonGames)}
               alt="trophée expérience"
             />
           </div>

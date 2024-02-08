@@ -1,0 +1,49 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.menberSince {
+  grid-column: span 2;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.leftinfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px;
+  border-bottom-left-radius: 20px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+.rightinfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px;
+  border-bottom-right-radius: 20px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  .menberSince {
+    width: 70vw;
+  }
+  .leftinfos {
+    width: 35vw;
+  }
+  .rightinfos {
+    width: 35vw;
+  }
+}
